@@ -1,0 +1,153 @@
+# Souza, Ventin, Tavares & Costa (2014), Chem. Eng. Comm. 201:1054-1076.
+# Revamp problem (Figure 5, Tables XII-XVI): the grassroots optimal network receives
+# two new coolers, E-105B (merged with E-105 as E-105A/B) and E-106 (edge 31), fed by
+# the new pipe sections 29 and 30. Split pipes of the grassroots solution became
+# separate edges (24-28) with a single diameter each.
+name: "Paper 1 - revamp of the cooling water network"
+description: "27 nodes, 31 edges: existing pump, 22 existing + 2 new pipe sections, 6 heat exchangers"
+author: "Jaime N. M. de Souza"
+date: "2014"
+
+fluid: {name: Cooling water, density: 995.0, viscosity: 0.72e-3, heat_capacity: 4187.0, inlet_temperature: 32.0}
+
+network:
+  nodes:
+    - {id: 1,  tag: "Cooling tower basin", elevation: 0.0, pressure: 0.0}
+    - {id: 10, tag: "Cooling tower top",   elevation: 5.0, pressure: 0.0}
+  edges:
+    - {id: 1,  from: 1,  to: 2}
+    - {id: 2,  from: 2,  to: 3}     # existing pump
+    - {id: 3,  from: 3,  to: 4}
+    - {id: 4,  from: 4,  to: 5}
+    - {id: 5,  from: 5,  to: 6}
+    - {id: 6,  from: 7,  to: 8}
+    - {id: 7,  from: 8,  to: 22}
+    - {id: 8,  from: 9,  to: 23}
+    - {id: 9,  from: 4,  to: 11}
+    - {id: 10, from: 4,  to: 12}
+    - {id: 11, from: 5,  to: 13}
+    - {id: 12, from: 6,  to: 14}
+    - {id: 13, from: 6,  to: 21}
+    - {id: 14, from: 16, to: 24}
+    - {id: 15, from: 17, to: 9}
+    - {id: 16, from: 18, to: 25}
+    - {id: 17, from: 19, to: 7}
+    - {id: 18, from: 20, to: 7}
+    - {id: 19, from: 11, to: 16}    # E-101
+    - {id: 20, from: 12, to: 17}    # E-102
+    - {id: 21, from: 13, to: 18}    # E-103
+    - {id: 22, from: 14, to: 19}    # E-104
+    - {id: 23, from: 15, to: 20}    # E-105A/B
+    - {id: 24, from: 21, to: 15}
+    - {id: 25, from: 22, to: 9}
+    - {id: 26, from: 23, to: 10}
+    - {id: 27, from: 24, to: 9}
+    - {id: 28, from: 25, to: 8}
+    - {id: 29, from: 6,  to: 26}    # new
+    - {id: 30, from: 27, to: 7}     # new
+    - {id: 31, from: 26, to: 27}    # E-106 (new)
+
+# Lengths of Table XII (unrounded: 0.225*25 = 5.625 m, etc.); installed diameters of
+# Table XIV ("before revamp").
+pipes:
+  - {edge: 1,  length: 10.0,   status: existing, diameter: "10"}
+  - {edge: 3,  length: 200.0,  status: existing, diameter: "12"}
+  - {edge: 4,  length: 100.0,  status: existing, diameter: "8"}
+  - {edge: 5,  length: 100.0,  status: existing, diameter: "6"}
+  - {edge: 6,  length: 100.0,  status: existing, diameter: "6"}
+  - {edge: 7,  length: 39.9,   status: existing, diameter: "8"}
+  - {edge: 8,  length: 162.0,  status: existing, diameter: "10"}
+  - {edge: 9,  length: 25.0,   status: existing, diameter: "3 1/2"}
+  - {edge: 10, length: 25.0,   status: existing, diameter: "6"}
+  - {edge: 11, length: 25.0,   status: existing, diameter: "8"}
+  - {edge: 12, length: 125.0,  status: existing, diameter: "6"}
+  - {edge: 13, length: 5.625,  status: existing, diameter: "1 1/2"}
+  - {edge: 14, length: 5.075,  status: existing, diameter: "3 1/2"}
+  - {edge: 15, length: 25.0,   status: existing, diameter: "6"}
+  - {edge: 16, length: 8.825,  status: existing, diameter: "6"}
+  - {edge: 17, length: 125.0,  status: existing, diameter: "6"}
+  - {edge: 18, length: 25.0,   status: existing, diameter: "2"}
+  - {edge: 24, length: 19.375, status: existing, diameter: "2"}
+  - {edge: 25, length: 60.1,   status: existing, diameter: "10"}
+  - {edge: 26, length: 38.0,   status: existing, diameter: "12"}
+  - {edge: 27, length: 19.925, status: existing, diameter: "4"}
+  - {edge: 28, length: 16.175, status: existing, diameter: "8"}
+  - {edge: 29, length: 25.0,   status: new}
+  - {edge: 30, length: 25.0,   status: new}
+
+# The installed pump is Curve 1 (the grassroots optimum); keeping it costs nothing.
+pump: {edge: 2, tag: P-101, existing: true, curve: Curve 1}
+
+pump_catalog:
+  - {tag: Curve 1, coefficients: [31.5, -135.0075, -415.5675], efficiency: 0.6, rated_flow: 0.095276382}
+  - {tag: Curve 2, coefficients: [37.8, -162.009,  -498.681],  efficiency: 0.6, rated_flow: 0.095276382}
+  - {tag: Curve 3, coefficients: [42.0, -180.01,   -554.09],   efficiency: 0.6, rated_flow: 0.095276382}
+  - {tag: Curve 4, coefficients: [46.2, -198.011,  -609.499],  efficiency: 0.6, rated_flow: 0.095276382}
+
+exchangers:
+  - edge: 19
+    tag: E-101
+    design_flow: 11.8
+    design_head_loss: 5.53
+    thermal: {area: 27.3, h_tube: 10615, h_shell: 658, fouling_tube: 0.000255, fouling_shell: 0.000255,
+              arrangement: 3, cold_in_tubes: true, hot_flow: 12.0, hot_heat_capacity: 2200,
+              hot_inlet_temperature: 80.0, hot_outlet_temperature: 65.0, cold_outlet_temperature: 40.0}
+  - edge: 20
+    tag: E-102
+    design_flow: 28.7
+    design_head_loss: 6.35
+    thermal: {area: 76.7, h_tube: 10651, h_shell: 266, fouling_tube: 0.000380, fouling_shell: 0.000380,
+              arrangement: 3, cold_in_tubes: true, hot_flow: 12.0, hot_heat_capacity: 2000,
+              hot_inlet_temperature: 120.0, hot_outlet_temperature: 80.0, cold_outlet_temperature: 40.0}
+  - edge: 21
+    tag: E-103
+    design_flow: 35.6
+    design_head_loss: 4.82
+    thermal: {area: 133.6, h_tube: 8864, h_shell: 923, fouling_tube: 0.000240, fouling_shell: 0.000240,
+              arrangement: 3, cold_in_tubes: true, hot_flow: 10.5, hot_heat_capacity: 2840,
+              hot_inlet_temperature: 80.0, hot_outlet_temperature: 40.0, cold_outlet_temperature: 40.0}
+  - edge: 22
+    tag: E-104
+    design_flow: 15.6
+    design_head_loss: 2.97
+    thermal: {area: 109.5, h_tube: 6187, h_shell: 450, fouling_tube: 0.000245, fouling_shell: 0.000245,
+              arrangement: 3, cold_in_tubes: true, hot_flow: 8.5, hot_heat_capacity: 2200,
+              hot_inlet_temperature: 69.0, hot_outlet_temperature: 41.0, cold_outlet_temperature: 40.0}
+  - edge: 23
+    tag: E-105A/B          # E-105 and the new parallel E-105B as one edge (doubled flow and area)
+    design_flow: 6.2
+    design_head_loss: 1.20
+    thermal: {area: 94.8, h_tube: 3645, h_shell: 216, fouling_tube: 0.000490, fouling_shell: 0.000490,
+              arrangement: 3, cold_in_tubes: true, hot_flow: 3.4, hot_heat_capacity: 2200,
+              hot_inlet_temperature: 69.0, hot_outlet_temperature: 41.0, cold_outlet_temperature: 40.0}
+  - edge: 31
+    tag: E-106
+    design_flow: 15.6
+    design_head_loss: 2.97
+    thermal: {area: 109.5, h_tube: 6187, h_shell: 450, fouling_tube: 0.000245, fouling_shell: 0.000245,
+              arrangement: 3, cold_in_tubes: true, hot_flow: 8.5, hot_heat_capacity: 2200,
+              hot_inlet_temperature: 69.0, hot_outlet_temperature: 41.0, cold_outlet_temperature: 40.0}
+
+# default pipe_catalog (ASME B36.10 STD) is used when the key is omitted
+
+economics:
+  energy_price: 0.10
+  interest_rate: 0.12
+  project_years: 20
+  operating_hours: 8760
+  pipe_cost: {c1: 7.0386, m: 1.4393}
+  pump_cost: {fi: 2.8, fms: 1.2970808, fm: 1.35, b: [5.1029, -1.2217, 0.0771]}
+  objective_basis: published
+
+# New flow specifications after the plant expansion (Table XIII).
+scenarios:
+  - name: revamp
+    time_fraction: 1.0
+    flows: {E-101: 7.5, E-102: 28.7, E-103: 35.6, E-104: 15.6, E-105A/B: 6.2, E-106: 15.6}
+
+options:
+  max_velocity: 3.7
+  allow_valves: true                 # valve head losses y_h are decision variables (Eq. 35-36)
+  allow_downsizing_existing: true
+  keep_larger_existing_in_traditional: true
+  traditional_method: edgar_himmelblau

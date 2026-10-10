@@ -1,0 +1,173 @@
+# Souza, Ventin, Tavares & Costa (2014), Chem. Eng. Comm. 201:1054-1076.
+# Grassroots design problem (Figures 1-2, Tables I-XI).
+#
+# Every quantity of the formulation is set here. Units: SI unless stated
+# (lengths m, roughness m, flows kg/s, heads m, pump curves in m vs m3/s,
+# diameters of the catalogue in inches/m, pressures bar gauge, costs USD).
+name: "Paper 1 - grassroots design of the cooling water network"
+description: "20 nodes, 23 edges: 1 pump, 17 pipe sections, 5 heat exchangers in parallel"
+author: "Jaime N. M. de Souza"
+date: "2014"
+
+fluid:
+  name: Cooling water
+  density: 995.0            # kg/m3
+  viscosity: 0.72e-3        # Pa.s
+  heat_capacity: 4187.0     # J/(kg K)
+  inlet_temperature: 32.0   # degC (thermal check only)
+
+network:
+  # Only the nodes that need data are listed; connection nodes referenced by the
+  # edges are created automatically (elevation 0, no pressure specification).
+  nodes:
+    - {id: 1,  tag: "Cooling tower basin", elevation: 0.0, pressure: 0.0}   # supply node (PS)
+    - {id: 10, tag: "Cooling tower top",   elevation: 5.0, pressure: 0.0}   # demand node (PD)
+  # Directed edges: water flows from "from" to "to" (Figure 2 of the paper).
+  edges:
+    - {id: 1,  from: 1,  to: 2}
+    - {id: 2,  from: 2,  to: 3}     # pump
+    - {id: 3,  from: 3,  to: 4}
+    - {id: 4,  from: 4,  to: 5}
+    - {id: 5,  from: 5,  to: 6}
+    - {id: 6,  from: 7,  to: 8}
+    - {id: 7,  from: 8,  to: 9}
+    - {id: 8,  from: 9,  to: 10}
+    - {id: 9,  from: 4,  to: 11}
+    - {id: 10, from: 4,  to: 12}
+    - {id: 11, from: 5,  to: 13}
+    - {id: 12, from: 6,  to: 14}
+    - {id: 13, from: 6,  to: 15}
+    - {id: 14, from: 16, to: 9}
+    - {id: 15, from: 17, to: 9}
+    - {id: 16, from: 18, to: 8}
+    - {id: 17, from: 19, to: 7}
+    - {id: 18, from: 20, to: 7}
+    - {id: 19, from: 11, to: 16}    # E-101
+    - {id: 20, from: 12, to: 17}    # E-102
+    - {id: 21, from: 13, to: 18}    # E-103
+    - {id: 22, from: 14, to: 19}    # E-104
+    - {id: 23, from: 15, to: 20}    # E-105
+
+# Pipe sections (Table I). status: new (free diameter) | existing | fixed.
+pipes:
+  - {edge: 1,  length: 10.0,  roughness: 46.0e-6}
+  - {edge: 3,  length: 200.0, roughness: 46.0e-6}
+  - {edge: 4,  length: 100.0, roughness: 46.0e-6}
+  - {edge: 5,  length: 100.0, roughness: 46.0e-6}
+  - {edge: 6,  length: 100.0, roughness: 46.0e-6}
+  - {edge: 7,  length: 100.0, roughness: 46.0e-6}
+  - {edge: 8,  length: 200.0, roughness: 46.0e-6}
+  - {edge: 9,  length: 25.0,  roughness: 46.0e-6}
+  - {edge: 10, length: 25.0,  roughness: 46.0e-6}
+  - {edge: 11, length: 25.0,  roughness: 46.0e-6}
+  - {edge: 12, length: 125.0, roughness: 46.0e-6}
+  - {edge: 13, length: 25.0,  roughness: 46.0e-6}
+  - {edge: 14, length: 25.0,  roughness: 46.0e-6}
+  - {edge: 15, length: 25.0,  roughness: 46.0e-6}
+  - {edge: 16, length: 25.0,  roughness: 46.0e-6}
+  - {edge: 17, length: 125.0, roughness: 46.0e-6}
+  - {edge: 18, length: 25.0,  roughness: 46.0e-6}
+
+pump: {edge: 2, tag: P-101, existing: false}
+
+# Pump alternatives (Table III): head[m] = a0 + a1 q + a2 q^2, q in m3/s.
+# The coefficients are the unrounded values of the original data files; Table III
+# prints them rounded (-415.6, -135.0, ...). rated_flow = 94.8 kg/s / 995 kg/m3.
+pump_catalog:
+  - {tag: Curve 1, coefficients: [31.5, -135.0075, -415.5675], efficiency: 0.6, rated_flow: 0.095276382}
+  - {tag: Curve 2, coefficients: [37.8, -162.009,  -498.681],  efficiency: 0.6, rated_flow: 0.095276382}
+  - {tag: Curve 3, coefficients: [42.0, -180.01,   -554.09],   efficiency: 0.6, rated_flow: 0.095276382}
+  - {tag: Curve 4, coefficients: [46.2, -198.011,  -609.499],  efficiency: 0.6, rated_flow: 0.095276382}
+
+# Heat exchangers (Tables VI-VII). design_flow/design_head_loss define the head-loss
+# curve F = F_design (k/k_design)^1.8; "thermal" feeds the effectiveness-NTU check.
+exchangers:
+  - edge: 19
+    tag: E-101
+    design_flow: 11.8
+    design_head_loss: 5.53
+    thermal: {area: 27.3,  h_tube: 10615, h_shell: 658, fouling_tube: 0.000255, fouling_shell: 0.000255,
+              tube_conductivity: 20.0, tube_inner_diameter: 0.01575, tube_outer_diameter: 0.01905,
+              arrangement: 3, cold_in_tubes: true, hot_flow: 12.0, hot_heat_capacity: 2200,
+              hot_inlet_temperature: 80.0, hot_outlet_temperature: 65.0, cold_outlet_temperature: 40.0}
+  - edge: 20
+    tag: E-102
+    design_flow: 28.7
+    design_head_loss: 6.35
+    thermal: {area: 76.7,  h_tube: 10651, h_shell: 266, fouling_tube: 0.000380, fouling_shell: 0.000380,
+              tube_conductivity: 20.0, tube_inner_diameter: 0.01575, tube_outer_diameter: 0.01905,
+              arrangement: 3, cold_in_tubes: true, hot_flow: 12.0, hot_heat_capacity: 2000,
+              hot_inlet_temperature: 120.0, hot_outlet_temperature: 80.0, cold_outlet_temperature: 40.0}
+  - edge: 21
+    tag: E-103
+    design_flow: 35.6
+    design_head_loss: 4.82
+    thermal: {area: 133.6, h_tube: 8864,  h_shell: 923, fouling_tube: 0.000240, fouling_shell: 0.000240,
+              tube_conductivity: 20.0, tube_inner_diameter: 0.01575, tube_outer_diameter: 0.01905,
+              arrangement: 3, cold_in_tubes: true, hot_flow: 10.5, hot_heat_capacity: 2840,
+              hot_inlet_temperature: 80.0, hot_outlet_temperature: 40.0, cold_outlet_temperature: 40.0}
+  - edge: 22
+    tag: E-104
+    design_flow: 15.6
+    design_head_loss: 2.97
+    thermal: {area: 109.5, h_tube: 6187,  h_shell: 450, fouling_tube: 0.000245, fouling_shell: 0.000245,
+              tube_conductivity: 20.0, tube_inner_diameter: 0.01575, tube_outer_diameter: 0.01905,
+              arrangement: 3, cold_in_tubes: true, hot_flow: 8.5, hot_heat_capacity: 2200,
+              hot_inlet_temperature: 69.0, hot_outlet_temperature: 41.0, cold_outlet_temperature: 40.0}
+  - edge: 23
+    tag: E-105
+    design_flow: 3.1
+    design_head_loss: 1.20
+    thermal: {area: 47.4,  h_tube: 3645,  h_shell: 216, fouling_tube: 0.000490, fouling_shell: 0.000490,
+              tube_conductivity: 20.0, tube_inner_diameter: 0.01575, tube_outer_diameter: 0.01905,
+              arrangement: 3, cold_in_tubes: true, hot_flow: 1.7, hot_heat_capacity: 2200,
+              hot_inlet_temperature: 69.0, hot_outlet_temperature: 41.0, cold_outlet_temperature: 40.0}
+
+# Commercial diameters (Table II): ASME/ANSI B36.10 schedule STD, 1/2 in to 24 in.
+pipe_catalog:
+  sizes:
+    - {nominal: 0.5,  inner_diameter: 0.0158, outer_diameter: 0.0213}
+    - {nominal: 0.75, inner_diameter: 0.0210, outer_diameter: 0.0267}
+    - {nominal: 1.0,  inner_diameter: 0.0266, outer_diameter: 0.0334}
+    - {nominal: 1.25, inner_diameter: 0.0351, outer_diameter: 0.0422}
+    - {nominal: 1.5,  inner_diameter: 0.0409, outer_diameter: 0.0483}
+    - {nominal: 2.0,  inner_diameter: 0.0525, outer_diameter: 0.0603}
+    - {nominal: 2.5,  inner_diameter: 0.0627, outer_diameter: 0.0730}
+    - {nominal: 3.0,  inner_diameter: 0.0779, outer_diameter: 0.0889}
+    - {nominal: 3.5,  inner_diameter: 0.0901, outer_diameter: 0.1016}
+    - {nominal: 4.0,  inner_diameter: 0.1023, outer_diameter: 0.1143}
+    - {nominal: 5.0,  inner_diameter: 0.1282, outer_diameter: 0.1413}
+    - {nominal: 6.0,  inner_diameter: 0.1541, outer_diameter: 0.1683}
+    - {nominal: 8.0,  inner_diameter: 0.2027, outer_diameter: 0.2191}
+    - {nominal: 10.0, inner_diameter: 0.2545, outer_diameter: 0.2730}
+    - {nominal: 12.0, inner_diameter: 0.3033, outer_diameter: 0.3239}
+    - {nominal: 14.0, inner_diameter: 0.3333, outer_diameter: 0.3556}
+    - {nominal: 16.0, inner_diameter: 0.3810, outer_diameter: 0.4064}
+    - {nominal: 18.0, inner_diameter: 0.4287, outer_diameter: 0.4572}
+    - {nominal: 20.0, inner_diameter: 0.4778, outer_diameter: 0.5080}
+    - {nominal: 24.0, inner_diameter: 0.5746, outer_diameter: 0.6096}
+
+# Economics (Tables IV-V). fms = 1457.4/1123.6 is the Marshall & Swift ratio used by
+# the original code (the paper rounds it to 1.3). objective_basis "published"
+# reproduces the published tables (pipe capital not annualized in the total).
+economics:
+  energy_price: 0.10        # USD/kWh
+  interest_rate: 0.12
+  project_years: 20
+  operating_hours: 8760
+  pipe_cost: {c1: 7.0386, m: 1.4393}
+  pump_cost: {fi: 2.8, fms: 1.2970808, fm: 1.35, b: [5.1029, -1.2217, 0.0771]}
+  objective_basis: published
+
+# Flow specifications (Table VI). A single scenario = the design condition.
+scenarios:
+  - name: design
+    time_fraction: 1.0
+    flows: {E-101: 11.8, E-102: 28.7, E-103: 35.6, E-104: 15.6, E-105: 3.1}
+
+options:
+  max_velocity: 3.7
+  allow_valves: true
+  traditional_method: edgar_himmelblau
+  edgar_himmelblau_coefficient: 1.269
+  lp_solver: highs-ds

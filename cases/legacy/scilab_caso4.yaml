@@ -1,0 +1,528 @@
+name: Flexible network - 01
+description: 20 nodes and 23 edges (5 heat exchangers)
+author: Jaime Souza
+date: 13/02/2012
+fluid:
+  name: Cooling Water
+  density: 995.0
+  viscosity: 0.0007199999999999999
+  heat_capacity: 4187.0
+  inlet_temperature: 32.0
+network:
+  nodes:
+  - id: 1
+    tag: Cooling Tower Source
+    elevation: 0.0
+    pressure: 0.0
+  - id: 2
+    tag: ''
+    elevation: 0.0
+  - id: 3
+    tag: ''
+    elevation: 0.0
+  - id: 4
+    tag: ''
+    elevation: 0.0
+  - id: 5
+    tag: ''
+    elevation: 0.0
+  - id: 6
+    tag: ''
+    elevation: 0.0
+  - id: 7
+    tag: ''
+    elevation: 0.0
+  - id: 8
+    tag: ''
+    elevation: 0.0
+  - id: 9
+    tag: ''
+    elevation: 0.0
+  - id: 10
+    tag: Cooling Tower Return
+    elevation: 5.0
+    pressure: 0.0
+  - id: 11
+    tag: ''
+    elevation: 0.0
+  - id: 12
+    tag: ''
+    elevation: 0.0
+  - id: 13
+    tag: ''
+    elevation: 0.0
+  - id: 14
+    tag: ''
+    elevation: 0.0
+  - id: 15
+    tag: ''
+    elevation: 0.0
+  - id: 16
+    tag: ''
+    elevation: 0.0
+  - id: 17
+    tag: ''
+    elevation: 0.0
+  - id: 18
+    tag: ''
+    elevation: 0.0
+  - id: 19
+    tag: ''
+    elevation: 0.0
+  - id: 20
+    tag: ''
+    elevation: 0.0
+  edges:
+  - id: 1
+    from: 1
+    to: 2
+  - id: 2
+    from: 2
+    to: 3
+  - id: 3
+    from: 3
+    to: 4
+  - id: 4
+    from: 4
+    to: 5
+  - id: 5
+    from: 5
+    to: 6
+  - id: 6
+    from: 7
+    to: 8
+  - id: 7
+    from: 8
+    to: 9
+  - id: 8
+    from: 9
+    to: 10
+  - id: 9
+    from: 4
+    to: 11
+  - id: 10
+    from: 4
+    to: 12
+  - id: 11
+    from: 5
+    to: 13
+  - id: 12
+    from: 6
+    to: 14
+  - id: 13
+    from: 6
+    to: 15
+  - id: 14
+    from: 16
+    to: 9
+  - id: 15
+    from: 17
+    to: 9
+  - id: 16
+    from: 18
+    to: 8
+  - id: 17
+    from: 19
+    to: 7
+  - id: 18
+    from: 20
+    to: 7
+  - id: 19
+    from: 11
+    to: 16
+  - id: 20
+    from: 12
+    to: 17
+  - id: 21
+    from: 13
+    to: 18
+  - id: 22
+    from: 14
+    to: 19
+  - id: 23
+    from: 15
+    to: 20
+pipes:
+- edge: 1
+  tag: '1'
+  length: 10.0
+  roughness: 4.6e-05
+  fittings_ld: 0.0
+  fixed_head_loss: 0.0
+  status: new
+- edge: 3
+  tag: '3'
+  length: 200.0
+  roughness: 4.6e-05
+  fittings_ld: 0.0
+  fixed_head_loss: 0.0
+  status: new
+- edge: 4
+  tag: '4'
+  length: 100.0
+  roughness: 4.6e-05
+  fittings_ld: 0.0
+  fixed_head_loss: 0.0
+  status: new
+- edge: 5
+  tag: '5'
+  length: 100.0
+  roughness: 4.6e-05
+  fittings_ld: 0.0
+  fixed_head_loss: 0.0
+  status: new
+- edge: 6
+  tag: '6'
+  length: 100.0
+  roughness: 4.6e-05
+  fittings_ld: 0.0
+  fixed_head_loss: 0.0
+  status: new
+- edge: 7
+  tag: '7'
+  length: 100.0
+  roughness: 4.6e-05
+  fittings_ld: 0.0
+  fixed_head_loss: 0.0
+  status: new
+- edge: 8
+  tag: '8'
+  length: 200.0
+  roughness: 4.6e-05
+  fittings_ld: 0.0
+  fixed_head_loss: 0.0
+  status: new
+- edge: 9
+  tag: '9'
+  length: 25.0
+  roughness: 4.6e-05
+  fittings_ld: 0.0
+  fixed_head_loss: 0.0
+  status: new
+- edge: 10
+  tag: '10'
+  length: 25.0
+  roughness: 4.6e-05
+  fittings_ld: 0.0
+  fixed_head_loss: 0.0
+  status: new
+- edge: 11
+  tag: '11'
+  length: 25.0
+  roughness: 4.6e-05
+  fittings_ld: 0.0
+  fixed_head_loss: 0.0
+  status: new
+- edge: 12
+  tag: '12'
+  length: 125.0
+  roughness: 4.6e-05
+  fittings_ld: 0.0
+  fixed_head_loss: 0.0
+  status: new
+- edge: 13
+  tag: '13'
+  length: 25.0
+  roughness: 4.6e-05
+  fittings_ld: 0.0
+  fixed_head_loss: 0.0
+  status: new
+- edge: 14
+  tag: '14'
+  length: 25.0
+  roughness: 4.6e-05
+  fittings_ld: 0.0
+  fixed_head_loss: 0.0
+  status: new
+- edge: 15
+  tag: '15'
+  length: 25.0
+  roughness: 4.6e-05
+  fittings_ld: 0.0
+  fixed_head_loss: 0.0
+  status: new
+- edge: 16
+  tag: '16'
+  length: 25.0
+  roughness: 4.6e-05
+  fittings_ld: 0.0
+  fixed_head_loss: 0.0
+  status: new
+- edge: 17
+  tag: '17'
+  length: 125.0
+  roughness: 4.6e-05
+  fittings_ld: 0.0
+  fixed_head_loss: 0.0
+  status: new
+- edge: 18
+  tag: '18'
+  length: 25.0
+  roughness: 4.6e-05
+  fittings_ld: 0.0
+  fixed_head_loss: 0.0
+  status: new
+pump:
+  edge: 2
+  tag: P-101
+  existing: false
+  curve: Curve 1
+pump_catalog:
+- tag: Curve 1
+  coefficients:
+  - 31.5
+  - -135.0075
+  - -415.5675
+  efficiency: 0.6
+  rated_flow: 0.095276382
+- tag: Curve 2
+  coefficients:
+  - 37.8
+  - -162.009
+  - -498.681
+  efficiency: 0.6
+  rated_flow: 0.095276382
+- tag: Curve 3
+  coefficients:
+  - 42.0
+  - -180.01
+  - -554.09
+  efficiency: 0.6
+  rated_flow: 0.095276382
+- tag: Curve 4
+  coefficients:
+  - 46.2
+  - -198.011
+  - -609.499
+  efficiency: 0.6
+  rated_flow: 0.095276382
+exchangers:
+- edge: 19
+  tag: E-101
+  design_flow: 11.8
+  design_head_loss: 5.53
+  head_loss_exponent: 1.8
+  thermal:
+    area: 27.3
+    h_tube: 10615.0
+    h_shell: 658.0
+    fouling_tube: 0.000255
+    fouling_shell: 0.000255
+    tube_conductivity: 20.0
+    tube_inner_diameter: 0.01575
+    tube_outer_diameter: 0.01905
+    arrangement: 3
+    cold_in_tubes: true
+    hot_flow: 12.0
+    hot_heat_capacity: 2200.0
+    hot_inlet_temperature: 80.0
+    hot_outlet_temperature: 65.0
+    cold_outlet_temperature: 40.0
+- edge: 20
+  tag: E-102
+  design_flow: 28.7
+  design_head_loss: 6.35
+  head_loss_exponent: 1.8
+  thermal:
+    area: 76.7
+    h_tube: 10651.0
+    h_shell: 266.0
+    fouling_tube: 0.00038
+    fouling_shell: 0.00038
+    tube_conductivity: 20.0
+    tube_inner_diameter: 0.01575
+    tube_outer_diameter: 0.01905
+    arrangement: 3
+    cold_in_tubes: true
+    hot_flow: 12.0
+    hot_heat_capacity: 2000.0
+    hot_inlet_temperature: 120.0
+    hot_outlet_temperature: 80.0
+    cold_outlet_temperature: 40.0
+- edge: 21
+  tag: E-103
+  design_flow: 35.6
+  design_head_loss: 4.82
+  head_loss_exponent: 1.8
+  thermal:
+    area: 133.6
+    h_tube: 8864.0
+    h_shell: 923.0
+    fouling_tube: 0.00024
+    fouling_shell: 0.00024
+    tube_conductivity: 20.0
+    tube_inner_diameter: 0.01575
+    tube_outer_diameter: 0.01905
+    arrangement: 3
+    cold_in_tubes: true
+    hot_flow: 10.5
+    hot_heat_capacity: 2840.0
+    hot_inlet_temperature: 80.0
+    hot_outlet_temperature: 40.0
+    cold_outlet_temperature: 40.0
+- edge: 22
+  tag: E-104
+  design_flow: 15.6
+  design_head_loss: 2.97
+  head_loss_exponent: 1.8
+  thermal:
+    area: 109.5
+    h_tube: 6187.0
+    h_shell: 450.0
+    fouling_tube: 0.000245
+    fouling_shell: 0.000245
+    tube_conductivity: 20.0
+    tube_inner_diameter: 0.01575
+    tube_outer_diameter: 0.01905
+    arrangement: 3
+    cold_in_tubes: true
+    hot_flow: 8.5
+    hot_heat_capacity: 2200.0
+    hot_inlet_temperature: 69.0
+    hot_outlet_temperature: 41.0
+    cold_outlet_temperature: 40.0
+- edge: 23
+  tag: E-105
+  design_flow: 3.1
+  design_head_loss: 1.2
+  head_loss_exponent: 1.8
+  thermal:
+    area: 47.4
+    h_tube: 3645.0
+    h_shell: 216.0
+    fouling_tube: 0.00049
+    fouling_shell: 0.00049
+    tube_conductivity: 20.0
+    tube_inner_diameter: 0.01575
+    tube_outer_diameter: 0.01905
+    arrangement: 3
+    cold_in_tubes: true
+    hot_flow: 1.7
+    hot_heat_capacity: 2200.0
+    hot_inlet_temperature: 69.0
+    hot_outlet_temperature: 41.0
+    cold_outlet_temperature: 40.0
+pipe_catalog:
+  sizes:
+  - nominal: 0.5
+    inner_diameter: 0.0158
+    outer_diameter: 0.0213
+  - nominal: 0.75
+    inner_diameter: 0.021
+    outer_diameter: 0.026699999999999998
+  - nominal: 1.0
+    inner_diameter: 0.026600000000000002
+    outer_diameter: 0.0334
+  - nominal: 1.25
+    inner_diameter: 0.0351
+    outer_diameter: 0.0422
+  - nominal: 1.5
+    inner_diameter: 0.0409
+    outer_diameter: 0.048299999999999996
+  - nominal: 2.0
+    inner_diameter: 0.0525
+    outer_diameter: 0.0603
+  - nominal: 2.5
+    inner_diameter: 0.0627
+    outer_diameter: 0.073
+  - nominal: 3.0
+    inner_diameter: 0.07790000000000001
+    outer_diameter: 0.0889
+  - nominal: 3.5
+    inner_diameter: 0.0901
+    outer_diameter: 0.1016
+  - nominal: 4.0
+    inner_diameter: 0.1023
+    outer_diameter: 0.1143
+  - nominal: 5.0
+    inner_diameter: 0.12819999999999998
+    outer_diameter: 0.1413
+  - nominal: 6.0
+    inner_diameter: 0.1541
+    outer_diameter: 0.1683
+  - nominal: 8.0
+    inner_diameter: 0.2027
+    outer_diameter: 0.2191
+  - nominal: 10.0
+    inner_diameter: 0.2545
+    outer_diameter: 0.273
+  - nominal: 12.0
+    inner_diameter: 0.3033
+    outer_diameter: 0.32389999999999997
+  - nominal: 14.0
+    inner_diameter: 0.3333
+    outer_diameter: 0.3556
+  - nominal: 16.0
+    inner_diameter: 0.381
+    outer_diameter: 0.4064
+  - nominal: 18.0
+    inner_diameter: 0.42869999999999997
+    outer_diameter: 0.4572
+  - nominal: 20.0
+    inner_diameter: 0.4778
+    outer_diameter: 0.508
+  - nominal: 24.0
+    inner_diameter: 0.5746
+    outer_diameter: 0.6096
+economics:
+  energy_price: 0.1
+  interest_rate: 0.12
+  project_years: 20
+  operating_hours: 8760.0
+  pipe_cost:
+    c1: 7.0386
+    m: 1.4393
+  pump_cost:
+    fi: 2.8
+    fms: 1.2970808116767534
+    fm: 1.35
+    b:
+    - 5.1029
+    - -1.2217
+    - 0.0771
+  objective_basis: published
+scenarios:
+- name: scenario 1
+  time_fraction: 0.25
+  flows:
+    E-101: 11.8
+    E-102: 28.7
+    E-103: 35.6
+    E-104: 15.6
+    E-105: 3.1
+- name: scenario 2
+  time_fraction: 0.25
+  flows:
+    E-101: 12.39
+    E-102: 30.135
+    E-103: 37.38
+    E-104: 15.6
+    E-105: 3.1
+- name: scenario 3
+  time_fraction: 0.25
+  flows:
+    E-101: 11.8
+    E-102: 30.135
+    E-103: 37.38
+    E-104: 16.38
+    E-105: 3.1
+- name: scenario 4
+  time_fraction: 0.25
+  flows:
+    E-101: 11.8
+    E-102: 28.7
+    E-103: 37.38
+    E-104: 16.38
+    E-105: 3.255
+options:
+  max_velocity: 3.7
+  allow_valves: true
+  allow_downsizing_existing: true
+  traditional_method: edgar_himmelblau
+  edgar_himmelblau_coefficient: 1.269
+  edgar_himmelblau_reference_price: 0.1
+  keep_larger_existing_in_traditional: true
+  lp_solver: highs-ds
+  qp_postprocess: false
+  simulation_tolerance: 1.0e-09
+  simulation_max_iterations: 50
