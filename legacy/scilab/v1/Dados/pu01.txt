@@ -1,0 +1,28 @@
+// PARTE 1) Definição das curvas da bomba
+
+// Linha deve começar com a expressão "PUMPCURVE" seguida dos campos abaixo:
+//  <ind:X>   --> X é o indice do equipamento
+//  <tag:"X"> --> X é o tag do equipamento
+//  <coefi:X> --> X são os coeficientes do polinomio que relaciona a
+//  vazão em m3/s e o head em m.
+//  <qrated:X> --> X é a vazão nominal da bomba em m3/s
+
+PUMPCURVE: <ind:1> <tag:"Curve 1"> <coef3:0> <coef2:0.00> <coef1:0.0> <coef0:12.0> <qrated:0.08> 
+PUMPCURVE: <ind:2> <tag:"Curve 2"> <coef3:0> <coef2:0.00> <coef1:0.0> <coef0:14.0> <qrated:0.08> 
+PUMPCURVE: <ind:3> <tag:"Curve 3"> <coef3:0> <coef2:0.00> <coef1:0.0> <coef0:17.5> <qrated:0.08> 
+PUMPCURVE: <ind:4> <tag:"Curve 4"> <coef3:0> <coef2:0.00> <coef1:0.0> <coef0:25.0> <qrated:0.08> 
+PUMPCURVE: <ind:5> <tag:"Curve 5"> <coef3:0> <coef2:0.00> <coef1:0.0> <coef0:35.0> <qrated:0.08> 
+
+// PARTE 2) Definição dos custos das bombas
+
+// Linha deve começar com a expressão "PUMPCOST" seguida dos campos abaixo:
+//  <eta:X>   --> X é a eficiencia da bomba
+//  <Nop:X>   --> X é o número de horas de operação por ano
+//  <pc:X>    --> X é o custo da energia em dolares/kWh
+//  <gamah:X> --> X é o coeficiente do custo fixo da bomba
+//  <coef1:X> --> X é o expoente do custo fixo da bomba
+//  <coef2:X> --> X é o expoente do custo fixo da bomba
+//  <in:X>    --> X é a taxa de anualização
+//  <ny:X>    --> X é o número de anos
+
+PUMPCOST: <eta:0.75> <Nop:7200> <pc:0.12> <gamah:700743> <coef1:0.7> <coef2:0.4> <in:0.05> <ny:10>

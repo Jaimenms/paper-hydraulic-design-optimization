@@ -1,0 +1,8 @@
+Para executar o Otimizador basta usar o comando
+exec('executaOtimizador13.sce',-1)
+
+Para executar o gerador de relatórios de resultados basta usar o comando
+exec('executaAvaliador13.sce',-1)
+
+Observação:
+É necessário ter instalado o Graphviz e o toolbox QUAPRO.

@@ -1,0 +1,190 @@
+// PARTE 1) "CASO"
+//  <projeto:"X">
+//  <usuario:"X">
+//  <data:"X">
+//  <documento:"X">
+//  <nome_rede:"X">
+//  <desc_rede:"X">
+CASO: <projeto:"Projeto Preliminar">
+CASO: <usuario:"Jaime Souza">
+CASO: <data:"03/8/2011">
+CASO: <documento:"caso0">
+CASO: <nome_rede:"Distribuicao agua">
+CASO: <desc_rede:"Rede teste">
+
+// PARTE 2) "REDE_FLUIDO"
+//  <tag:"X"> --> X é o nome do fluido (n?o usar caracteres especiais ou acentos)
+//  <dens:X>  --> X é a densidade do fluido em kg/m3
+//  <visc:X>  --> X é a viscosidade em cP
+//  <cp:X>    --> X é a capacidade térmica em J/kg°C
+//  <v_PI_max:X> --> X é o velocidade máxima de projeto (m/s)
+REDE_FLUIDO: <tag:"Agua">
+REDE_FLUIDO: <dens:995>
+REDE_FLUIDO: <visc:0.72>
+REDE_FLUIDO: <cp: 4187>
+REDE_FLUIDO: <temp: 32>
+REDE_FLUIDO: <v_PI_max:3.7>
+
+// PARTE 3) "VERTICE"
+//  <ind_vertice:"X">  --> X é o índice do vertice
+//  <tag_vertice:"X">  --> X é o tag do vertice
+//  <tipo:X>           --> X é o tipo de especificação sendo P para pressão e W para vaz?o externa
+//  <esp:X>            --> X é o valor da especificação (em kgf/cm2 se pressão P e em kg/s se vazão Q)
+//  <z:X>              --> X é o valor da cota do vertice (em m)
+REDE_VERTICE: <ind_vertice:1> <tag_vertice:"Cooling Tower Source"> <tipo:"P"> <esp:0> <z:0>
+REDE_VERTICE: <ind_vertice:10> <tag_vertice:"Cooling Tower Return"> <tipo:"P"> <esp:0> <z:5>
+
+// PARTE 4) "REDE_ARESTA_TROC"
+//  <ind:X>   --> X é o indice do equipamento
+//  <tag:"X"> --> X é o tag do equipamento
+//  <k:X>     --> X é a vazão de consumo em kg/s
+//  <F:X>     --> X é a perda de carga em m para a vazão k
+//  <mh:X>    --> X é a vazão mássica do fluido quente em kg/s
+//  <Cph:X>   --> X é a capacidade térmica do fluido quente em J/kg°C
+//  <Thi:X>   --> X é a temperatura de entrada do fluido quente em °C
+//  <Tho_sp:X>--> X é a temperatura de desajada de saída do fluido quente em °C
+//  <mc_sp:X> --> X é a vazão mássica desejada do fluido frio em kg/s
+//  <Tco_sp:X>--> X é a temperatura de desajada de saída do fluido frio em °C
+//  <A:X>     --> X é a área de troca térmica em m²
+//  <hi_sp:x> --> Valores de projeto dos coeficientes de convec??o no interior dos tubos (W/m^2K)
+//  <he_sp:x> --> Valores de projeto dos coeficientes de convec?ao no exterior dos tubos (W/m^2K)
+//  <Rfi:x>   --> Resist?ncias de dep?sito no interior dos tubos (m^2K/W)
+//  <Rfe:x>   --> Resist?ncias de dep?sito no exterior do casco (m^2K/W)
+//  <kt:x>    --> Condutividade t?rmica dos tubos (W/mK)
+//  <Dti:x>   --> Di?metro interno dos tubos (m)
+//  <Dte:x>   --> Di?metro externo dos tubos (m)
+//  <ic:x>    --> Identificadores da configura??o (1 = paralelo, 2 = contracorrente, 3 = 1:N)
+//  <it:x>    --> Identificadores do fluido que escoa no interior dos tubos (1 = frio, 0 = quente)
+REDE_ARESTA_TROC: <ind:19> <tag:"E-101"> <k:11.8> <F:5.4> <mh:12.0> <Cph:2200> <Thi:80>  <Tho_sp:65> <mc_sp:11.8> <Tco_sp:40> <A:27.3>  <hi_sp:10615> <he_sp:658> <Rfi:0.000255> <Rfe:0.000255> <kt:20.0> <Dti:0.01575> <Dte:0.01905 > <ic:3> <it:1> <Fac:0>
+REDE_ARESTA_TROC: <ind:20> <tag:"E-102"> <k:28.7> <F:6.2> <mh:12.0> <Cph:2000> <Thi:120> <Tho_sp:80> <mc_sp:28.7> <Tco_sp:40> <A:76.7>  <hi_sp:10651> <he_sp:266> <Rfi:0.000380> <Rfe:0.000380> <kt:20.0> <Dti:0.01575> <Dte:0.01905 > <ic:3> <it:1> <Fac:0>
+REDE_ARESTA_TROC: <ind:21> <tag:"E-103"> <k:35.6> <F:4.7> <mh:10.5> <Cph:2840> <Thi:80>  <Tho_sp:40> <mc_sp:35.6> <Tco_sp:40> <A:133.6> <hi_sp:8864>  <he_sp:923> <Rfi:0.000240> <Rfe:0.000240> <kt:20.0> <Dti:0.01575> <Dte:0.01905 > <ic:3> <it:1> <Fac:0>
+REDE_ARESTA_TROC: <ind:22> <tag:"E-104"> <k:15.6> <F:2.8> <mh:8.5>  <Cph:2200> <Thi:69>  <Tho_sp:41> <mc_sp:15.6> <Tco_sp:40> <A:109.5> <hi_sp:6187>  <he_sp:450> <Rfi:0.000245> <Rfe:0.000245> <kt:20.0> <Dti:0.01575> <Dte:0.01905 > <ic:3> <it:1> <Fac:0>
+REDE_ARESTA_TROC: <ind:23> <tag:"E-105"> <k:3.1>  <F:1.2> <mh:1.7>  <Cph:2200> <Thi:69>  <Tho_sp:41> <mc_sp:3.1>  <Tco_sp:40> <A:47.4>  <hi_sp:3645>  <he_sp:216> <Rfi:0.00049>  <Rfe:0.00049>  <kt:20.0> <Dti:0.01575> <Dte:0.01905 > <ic:3> <it:1> <Fac:0>
+
+// PARTE 5) "REDE_ARESTA_BOMBA"
+//  <ind:X>   --> X é o indice do equipamento
+//  <tag:"X"> --> X é o tag do equipamento
+//  <coefi:X> --> X são os coeficientes do polinomio que relaciona a
+//  vazão em m3/s e o head em m.
+REDE_ARESTA_BOMBA: <ind:2> <tag:"P-101"> <curve:"Curve 1"> <tipo:"existente">
+
+// PARTE 6) "REDE_ARESTA_LINHA"
+//  <ind:"X"> --> X é o indice da linha
+//  <tag:"X"> --> X é o tag da linha
+//  <L:X>     --> X é o comprimento equivalente da linha em m
+//  <e:X>     --> X é a rugosidade da linha em mm
+//  <q:X>     --> X é a vaz?o estimada em m?/h
+//  <DIA:X>   --> diametro interno (string de bitola)
+//  <DIAsplit:X>   --> diametro interno (string de bitola) para trecho do split
+//  <xsplit:X>   --> fração de comprimento do trecho do split
+//  <LDac:X>  --> X é o n?mero de L/D de acidententes
+//  <Fac:X>   --> X é a perda de carga localizada em m
+REDE_ARESTA_LINHA: <ind:1> <tag:"1">   <L:10>  <e:46> <DIA:"10">    <LDac:0> <Fac:0> <DIAsplit:"10">    <xsplit:0>   <tipo:"novo_otimo">
+REDE_ARESTA_LINHA: <ind:3> <tag:"3">   <L:200> <e:46> <DIA:"10">    <LDac:0> <Fac:0> <DIAsplit:"10">    <xsplit:0>   <tipo:"novo_otimo">
+REDE_ARESTA_LINHA: <ind:4> <tag:"4">   <L:100> <e:46> <DIA:"10">    <LDac:0> <Fac:0> <DIAsplit:"10">    <xsplit:0>   <tipo:"novo_otimo">
+REDE_ARESTA_LINHA: <ind:5> <tag:"5">   <L:100> <e:46> <DIA:"6">     <LDac:0> <Fac:0> <DIAsplit:"6">     <xsplit:0>   <tipo:"novo_otimo">
+REDE_ARESTA_LINHA: <ind:6> <tag:"6">   <L:100> <e:46> <DIA:"6">     <LDac:0> <Fac:0> <DIAsplit:"6">     <xsplit:0>   <tipo:"novo_otimo">
+REDE_ARESTA_LINHA: <ind:7> <tag:"7">   <L:100> <e:46> <DIA:"10">    <LDac:0> <Fac:0> <DIAsplit:"10">    <xsplit:0>   <tipo:"novo_otimo">
+REDE_ARESTA_LINHA: <ind:8> <tag:"8">   <L:200> <e:46> <DIA:"12">    <LDac:0> <Fac:0> <DIAsplit:"12">    <xsplit:0>   <tipo:"novo_otimo">
+REDE_ARESTA_LINHA: <ind:9> <tag:"9">   <L:25>  <e:46> <DIA:"3 1/2"> <LDac:0> <Fac:0> <DIAsplit:"3 1/2"> <xsplit:0>   <tipo:"novo_otimo">
+REDE_ARESTA_LINHA: <ind:10> <tag:"10"> <L:25>  <e:46> <DIA:"6">     <LDac:0> <Fac:0> <DIAsplit:"6">     <xsplit:0>   <tipo:"novo_otimo">
+REDE_ARESTA_LINHA: <ind:11> <tag:"11"> <L:25>  <e:46> <DIA:"6">     <LDac:0> <Fac:0> <DIAsplit:"6">     <xsplit:0>   <tipo:"novo_otimo">
+REDE_ARESTA_LINHA: <ind:12> <tag:"12"> <L:125> <e:46> <DIA:"6">     <LDac:0> <Fac:0> <DIAsplit:"6">     <xsplit:0>   <tipo:"novo_otimo">
+REDE_ARESTA_LINHA: <ind:13> <tag:"13"> <L:25>  <e:46> <DIA:"2">     <LDac:0> <Fac:0> <DIAsplit:"2">     <xsplit:0>   <tipo:"novo_otimo">
+REDE_ARESTA_LINHA: <ind:14> <tag:"14"> <L:25>  <e:46> <DIA:"4">     <LDac:0> <Fac:0> <DIAsplit:"4">     <xsplit:0>   <tipo:"novo_otimo">
+REDE_ARESTA_LINHA: <ind:15> <tag:"15"> <L:25>  <e:46> <DIA:"8">     <LDac:0> <Fac:0> <DIAsplit:"8">     <xsplit:0>   <tipo:"novo_otimo">
+REDE_ARESTA_LINHA: <ind:16> <tag:"16"> <L:25>  <e:46> <DIA:"8">     <LDac:0> <Fac:0> <DIAsplit:"8">     <xsplit:0>   <tipo:"novo_otimo">
+REDE_ARESTA_LINHA: <ind:17> <tag:"17"> <L:125> <e:46> <DIA:"5">     <LDac:0> <Fac:0> <DIAsplit:"5">     <xsplit:0>   <tipo:"novo_otimo">
+REDE_ARESTA_LINHA: <ind:18> <tag:"18"> <L:25>  <e:46> <DIA:"1 1/2"> <LDac:0> <Fac:0> <DIAsplit:"1 1/2"> <xsplit:0>   <tipo:"novo_otimo">
+
+// PARTE 7) "REDE"
+//  <ind_aresta:"X">  --> X é o índice da aresta
+//  <noh_montante:X>  --> X é o índice do n? a montante da aresta
+//  <noh_jusante:X>   --> X é o índice do n? a jusante da aresta
+REDE: <ind_aresta:1>  <ind_noh_montante:1>  <ind_noh_jusante:2> 
+REDE: <ind_aresta:2>  <ind_noh_montante:2>  <ind_noh_jusante:3> 
+REDE: <ind_aresta:3>  <ind_noh_montante:3>  <ind_noh_jusante:4> 
+REDE: <ind_aresta:4>  <ind_noh_montante:4>  <ind_noh_jusante:5> 
+REDE: <ind_aresta:5>  <ind_noh_montante:5>  <ind_noh_jusante:6> 
+REDE: <ind_aresta:6>  <ind_noh_montante:7>  <ind_noh_jusante:8> 
+REDE: <ind_aresta:7>  <ind_noh_montante:8>  <ind_noh_jusante:9> 
+REDE: <ind_aresta:8>  <ind_noh_montante:9>  <ind_noh_jusante:10>
+REDE: <ind_aresta:9>  <ind_noh_montante:4>  <ind_noh_jusante:11> 
+REDE: <ind_aresta:10> <ind_noh_montante:4>  <ind_noh_jusante:12> 
+REDE: <ind_aresta:11> <ind_noh_montante:5>  <ind_noh_jusante:13> 
+REDE: <ind_aresta:12> <ind_noh_montante:6>  <ind_noh_jusante:14> 
+REDE: <ind_aresta:13> <ind_noh_montante:6>  <ind_noh_jusante:15> 
+REDE: <ind_aresta:14> <ind_noh_montante:16> <ind_noh_jusante:9> 
+REDE: <ind_aresta:15> <ind_noh_montante:17> <ind_noh_jusante:9> 
+REDE: <ind_aresta:16> <ind_noh_montante:18> <ind_noh_jusante:8> 
+REDE: <ind_aresta:17> <ind_noh_montante:19> <ind_noh_jusante:7> 
+REDE: <ind_aresta:18> <ind_noh_montante:20> <ind_noh_jusante:7> 
+REDE: <ind_aresta:19> <ind_noh_montante:11> <ind_noh_jusante:16> 
+REDE: <ind_aresta:20> <ind_noh_montante:12> <ind_noh_jusante:17> 
+REDE: <ind_aresta:21> <ind_noh_montante:13> <ind_noh_jusante:18> 
+REDE: <ind_aresta:22> <ind_noh_montante:14> <ind_noh_jusante:19> 
+REDE: <ind_aresta:23> <ind_noh_montante:15> <ind_noh_jusante:20> 
+
+// PARTE 8) "OPT_CURVA"
+//  <ind:X>   --> X é o indice do equipamento
+//  <tag:"X"> --> X é o tag do equipamento
+//  <coefi:X> --> X são os coeficientes do polinomio que relaciona a vazão em m3/s e o head em m.
+//  <qrated:X> --> X é a vazão nominal da bomba em m3/s
+//  <eta:X>   --> X é a eficiencia da bomba
+OPT_CURVA: <ind:1> <tag:"Curve 1"> <coef3:0> <coef2:-415.5675> <coef1:-135.0075> <coef0:31.5> <qrated:0.0954714> <eta:0.6>
+OPT_CURVA: <ind:2> <tag:"Curve 2"> <coef3:0> <coef2:-498.681>  <coef1:-162.009>  <coef0:37.8> <qrated:0.0954714> <eta:0.6>
+OPT_CURVA: <ind:3> <tag:"Curve 3"> <coef3:0> <coef2:-554.09>   <coef1:-180.01>   <coef0:42.0> <qrated:0.0954714> <eta:0.6>
+OPT_CURVA: <ind:4> <tag:"Curve 4"> <coef3:0> <coef2:-609.499>  <coef1:-198.011>  <coef0:46.2> <qrated:0.0954714> <eta:0.6>
+
+// PARTE 9) "OPT_CUSTO_OPERACIONAL"
+//  <pc:X>    --> X é o custo da energia em dolares/kWh
+//  <in:X>    --> X é a taxa de anualização
+//  <ny:X>    --> X é o número de anos
+OPT_CUSTO_OPERACIONAL: <pc:0.10> <in:0.12> <ny:20> <Nop:8760>
+
+// PARTE 10) "OPT_OPCOES_LINHA"
+//  <tag:"X">
+//  <DIN:"X">  --> para diametro interno
+//  <DOUT:"X"> --> para diametro externo
+OPT_OPCOES_LINHA: <tag:"1/2">   <DOUT:21.3>  <DIN:15.8>  <DN:0.5>
+OPT_OPCOES_LINHA: <tag:"3/4">   <DOUT:26.7>  <DIN:21.0>  <DN:0.75>
+OPT_OPCOES_LINHA: <tag:"1">     <DOUT:33.4>  <DIN:26.6>  <DN:1.0>
+OPT_OPCOES_LINHA: <tag:"1 1/4"> <DOUT:42.2>  <DIN:35.1>  <DN:1.25>
+OPT_OPCOES_LINHA: <tag:"1 1/2"> <DOUT:48.3>  <DIN:40.9>  <DN:1.5>
+OPT_OPCOES_LINHA: <tag:"2">     <DOUT:60.3>  <DIN:52.5>  <DN:2.0>
+OPT_OPCOES_LINHA: <tag:"2 1/2"> <DOUT:73.0>  <DIN:62.7>  <DN:2.5>
+OPT_OPCOES_LINHA: <tag:"3">     <DOUT:88.9>  <DIN:77.9>  <DN:3.0>
+OPT_OPCOES_LINHA: <tag:"3 1/2"> <DOUT:101.6> <DIN:90.1>  <DN:3.5>
+OPT_OPCOES_LINHA: <tag:"4">     <DOUT:114.3> <DIN:102.3> <DN:4.0>
+OPT_OPCOES_LINHA: <tag:"5">     <DOUT:141.3> <DIN:128.2> <DN:5.0>
+OPT_OPCOES_LINHA: <tag:"6">     <DOUT:168.3> <DIN:154.1> <DN:6.0>
+OPT_OPCOES_LINHA: <tag:"8">     <DOUT:219.1> <DIN:202.7> <DN:8.0>
+OPT_OPCOES_LINHA: <tag:"10">    <DOUT:273.0> <DIN:254.5> <DN:10.0>
+OPT_OPCOES_LINHA: <tag:"12">    <DOUT:323.9> <DIN:303.3> <DN:12.0>
+OPT_OPCOES_LINHA: <tag:"14">    <DOUT:355.6> <DIN:333.3> <DN:14.0>
+OPT_OPCOES_LINHA: <tag:"16">    <DOUT:406.4> <DIN:381.0> <DN:16.0>
+OPT_OPCOES_LINHA: <tag:"18">    <DOUT:457.2> <DIN:428.7> <DN:18.0>
+OPT_OPCOES_LINHA: <tag:"20">    <DOUT:508.0> <DIN:477.8> <DN:20.0>
+OPT_OPCOES_LINHA: <tag:"24">    <DOUT:609.6> <DIN:574.6> <DN:24.0>
+
+// PARTE 11) "OPT_CUSTO_LINHA"
+//  <alfa:"X">
+//  <beta:"X">
+OPT_CUSTO_LINHA: <alfa:7.0386> <beta:1.4393>
+
+// PARTE 12) "OPT_CENARIO"
+//  <i:X>        --> X é o indice do cenário
+//  <ind:X>      --> X é o indice do equipamento
+//  <tag:"X">    --> X é o tag do equipamento
+//  <k:X>        --> X é a vazão de consumo em kg/s
+//  <Nop:X>      --> X é o número de horas de operação por ano
+OPT_CENARIO: <i:1> <ind:19> <tag:"E-101"> <k:11.8> <Nop:8760>
+OPT_CENARIO: <i:1> <ind:20> <tag:"E-102"> <k:28.7> <Nop:8760>
+OPT_CENARIO: <i:1> <ind:21> <tag:"E-103"> <k:35.6> <Nop:8760>
+OPT_CENARIO: <i:1> <ind:22> <tag:"E-104"> <k:15.6> <Nop:8760>
+OPT_CENARIO: <i:1> <ind:23> <tag:"E-105"> <k:3.1>  <Nop:8760>
+OPT_CENARIO: <i:2> <ind:19> <tag:"E-101"> <k:12.0> <Nop:8760>
+OPT_CENARIO: <i:2> <ind:20> <tag:"E-102"> <k:28.7> <Nop:8760>
+OPT_CENARIO: <i:2> <ind:21> <tag:"E-103"> <k:35.6> <Nop:8760>
+OPT_CENARIO: <i:2> <ind:22> <tag:"E-104"> <k:15.6> <Nop:8760>
+OPT_CENARIO: <i:2> <ind:23> <tag:"E-105"> <k:3.1>  <Nop:8760>

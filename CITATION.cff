@@ -1,0 +1,43 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the original papers and this repository."
+title: "cwnet: hydraulic design optimization of cooling water pipe networks (Python reimplementation)"
+type: software
+version: 0.1.0
+license: MIT
+authors:
+  - family-names: de Souza
+    given-names: Jaime N. M.
+references:
+  - type: article
+    title: "A matrix approach for optimization of pipe networks in cooling water systems"
+    authors:
+      - family-names: de Souza
+        given-names: Jaime N. M.
+      - family-names: Ventin
+        given-names: Fabyana F.
+      - family-names: Tavares
+        given-names: Viviane B. G.
+      - family-names: Costa
+        given-names: André L. H.
+    journal: "Chemical Engineering Communications"
+    volume: 201
+    issue: 8
+    year: 2014
+    start: 1054
+    end: 1076
+    doi: 10.1080/00986445.2013.800484
+  - type: article
+    title: "Hydraulic design optimization of multi-scenario of cooling water distribution system"
+    authors:
+      - family-names: Costa
+        given-names: André L. H.
+      - family-names: Tonassi
+        given-names: Érica L. R.
+      - family-names: de Souza
+        given-names: Jaime N. M.
+    journal: "Chemical Engineering Transactions"
+    volume: 52
+    year: 2016
+    start: 1189
+    end: 1194
+    doi: 10.3303/CET1652199

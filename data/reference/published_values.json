@@ -1,0 +1,138 @@
+{
+  "_comment": "Values printed in the papers, used by `cwnet eval` and by the regression tests. Costs in USD/year except pipe capital (USD, as printed); flows in kg/s; heads in m.",
+  "paper1_grassroots": {
+    "reference": "Souza, Ventin, Tavares & Costa (2014), Chem. Eng. Comm. 201(8):1054-1076",
+    "traditional_method": "edgar_himmelblau",
+    "traditional_required_head_m": 17.8,
+    "traditional_pump": "Curve 2",
+    "best_pump": "Curve 1",
+    "table_ix": {
+      "1": {"traditional": "12", "optimization": "10", "fraction": "1.000"},
+      "3": {"traditional": "12", "optimization": "12", "fraction": "1.000"},
+      "4": {"traditional": "8", "optimization": "8", "fraction": "1.000"},
+      "5": {"traditional": "5", "optimization": "6", "fraction": "1.000"},
+      "6": {"traditional": "5", "optimization": "6", "fraction": "1.000"},
+      "7": {"traditional": "8", "optimization": "8/10", "fraction": "0.399/0.601"},
+      "8": {"traditional": "12", "optimization": "10/12", "fraction": "0.810/0.190"},
+      "9": {"traditional": "4", "optimization": "3 1/2", "fraction": "1.000"},
+      "10": {"traditional": "6", "optimization": "6", "fraction": "1.000"},
+      "11": {"traditional": "8", "optimization": "8", "fraction": "1.000"},
+      "12": {"traditional": "5", "optimization": "6", "fraction": "1.000"},
+      "13": {"traditional": "2 1/2", "optimization": "1 1/2/2", "fraction": "0.225/0.775"},
+      "14": {"traditional": "4", "optimization": "3 1/2/4", "fraction": "0.203/0.797"},
+      "15": {"traditional": "6", "optimization": "6", "fraction": "1.000"},
+      "16": {"traditional": "8", "optimization": "6/8", "fraction": "0.353/0.647"},
+      "17": {"traditional": "5", "optimization": "6", "fraction": "1.000"},
+      "18": {"traditional": "2 1/2", "optimization": "2", "fraction": "1.000"}
+    },
+    "table_x": {
+      "E-101": {"design_flow": 11.8, "design_hot_outlet": 65.0, "simulated_flow": 13.8, "simulated_hot_outlet": 63.2},
+      "E-102": {"design_flow": 28.7, "design_hot_outlet": 80.0, "simulated_flow": 32.2, "simulated_hot_outlet": 78.2},
+      "E-103": {"design_flow": 35.6, "design_hot_outlet": 40.0, "simulated_flow": 39.8, "simulated_hot_outlet": 39.1},
+      "E-104": {"design_flow": 15.6, "design_hot_outlet": 41.0, "simulated_flow": 12.7, "simulated_hot_outlet": 41.7},
+      "E-105": {"design_flow": 3.1, "design_hot_outlet": 41.0, "simulated_flow": 4.2, "simulated_hot_outlet": 38.6},
+      "Total": {"design_flow": 94.8, "simulated_flow": 102.7}
+    },
+    "table_xi": {
+      "Traditional (edgar_himmelblau)": {"total": 42815, "operating": 23184, "pump": 3209, "pipe": 16422},
+      "Proposed / Curve 1": {"total": 39811, "operating": 20183, "pump": 3045, "pipe": 16583},
+      "Proposed / Curve 2": {"total": 41768, "operating": 24220, "pump": 3209, "pipe": 14339},
+      "Proposed / Curve 3": {"total": 43939, "operating": 26911, "pump": 3312, "pipe": 13716},
+      "Proposed / Curve 4": {"total": 46292, "operating": 29602, "pump": 3409, "pipe": 13281}
+    },
+    "cost_reduction_percent": 7.0
+  },
+  "paper1_revamp": {
+    "reference": "Souza, Ventin, Tavares & Costa (2014), Chem. Eng. Comm. 201(8):1054-1076, revamp problem",
+    "traditional_method": "edgar_himmelblau",
+    "traditional_required_head_m": 14.4,
+    "traditional_pump_as_published": "Curve 4",
+    "best_pump": "Curve 3",
+    "valve_head_loss_m": {"E-101": 3.763, "E-102": 0.0, "E-103": 0.0, "E-104": 0.0, "E-105A/B": 0.0, "E-106": 0.0},
+    "table_xiv": {
+      "1": {"before": "10", "traditional": "12", "optimization": "10", "fraction": "1"},
+      "3": {"before": "12", "traditional": "12", "optimization": "12", "fraction": "1"},
+      "4": {"before": "8", "traditional": "10", "optimization": "10", "fraction": "1"},
+      "5": {"before": "6", "traditional": "8", "optimization": "8", "fraction": "1"},
+      "6": {"before": "6", "traditional": "8", "optimization": "6/8", "fraction": "0.041/0.959"},
+      "7": {"before": "8", "traditional": "10", "optimization": "10/8", "fraction": "0.355/0.645"},
+      "8": {"before": "10", "traditional": "12", "optimization": "10", "fraction": "1"},
+      "9": {"before": "3 1/2", "traditional": "4", "optimization": "3 1/2", "fraction": "1"},
+      "10": {"before": "6", "traditional": "6", "optimization": "6/8", "fraction": "0.272/0.728"},
+      "11": {"before": "8", "traditional": "8", "optimization": "8", "fraction": "1"},
+      "12": {"before": "6", "traditional": "6", "optimization": "6", "fraction": "1"},
+      "13": {"before": "1 1/2", "traditional": "3", "optimization": "3", "fraction": "1"},
+      "14": {"before": "3 1/2", "traditional": "4", "optimization": "3 1/2", "fraction": "1"},
+      "15": {"before": "6", "traditional": "6", "optimization": "6", "fraction": "1"},
+      "16": {"before": "6", "traditional": "8", "optimization": "6", "fraction": "1"},
+      "17": {"before": "6", "traditional": "6", "optimization": "6", "fraction": "1"},
+      "18": {"before": "2", "traditional": "3", "optimization": "3", "fraction": "1"},
+      "24": {"before": "2", "traditional": "3", "optimization": "3/2", "fraction": "0.388/0.612"},
+      "25": {"before": "10", "traditional": "10", "optimization": "10", "fraction": "1"},
+      "26": {"before": "12", "traditional": "12", "optimization": "12", "fraction": "1"},
+      "27": {"before": "4", "traditional": "4", "optimization": "4", "fraction": "1"},
+      "28": {"before": "8", "traditional": "8", "optimization": "8", "fraction": "1"},
+      "29": {"before": "-", "traditional": "5", "optimization": "5", "fraction": "1"},
+      "30": {"before": "-", "traditional": "5", "optimization": "5/4", "fraction": "0.063/0.937"}
+    },
+    "table_xv": {
+      "E-101": {"designed": 7.5, "simulated": 12.0},
+      "E-102": {"designed": 28.7, "simulated": 28.0},
+      "E-103": {"designed": 35.6, "simulated": 36.5},
+      "E-104": {"designed": 15.6, "simulated": 15.5},
+      "E-105A/B": {"designed": 6.2, "simulated": 8.3},
+      "E-106": {"designed": 15.6, "simulated": 16.8},
+      "Total": {"designed": 117.2, "simulated": 117.1}
+    },
+    "table_xv_note": "The published 'Total designed' 117.2 is a misprint (the column sums to 109.2); the traditional column was computed with E-101 at 11.8 kg/s (see docs/errata.md).",
+    "table_xvi": {
+      "Traditional (as published)": {"total": 37378, "operating": 24193, "pump": 3409, "pipe": 9776},
+      "Proposed / Curve 1": {"total": 43746, "operating": 18265, "pump": 0, "pipe": 25481},
+      "Proposed / Curve 2": {"total": 34622, "operating": 21918, "pump": 3209, "pipe": 9495},
+      "Proposed / Curve 3": {"total": 32857, "operating": 24353, "pump": 3312, "pipe": 5192},
+      "Proposed / Curve 4": {"total": 33142, "operating": 26789, "pump": 3409, "pipe": 2944}
+    },
+    "cost_reduction_percent": 12.1
+  },
+  "paper2_multiscenario": {
+    "reference": "Costa, Tonassi & Souza (2016), Chem. Eng. Trans. 52",
+    "traditional_method": "towler",
+    "best_pump": "Pump 1",
+    "traditional_pump": "Pump 1",
+    "table_5": {
+      "1": {"optimization": "10 (48.4%) / 12 (51.6%)", "traditional": "14"},
+      "3": {"optimization": "12", "traditional": "14"},
+      "4": {"optimization": "8 (34.2%) / 10 (65.8%)", "traditional": "10"},
+      "5": {"optimization": "6", "traditional": "6"},
+      "6": {"optimization": "6", "traditional": "6"},
+      "7": {"optimization": "8", "traditional": "10"},
+      "8": {"optimization": "12", "traditional": "14"},
+      "9": {"optimization": "3 1/2", "traditional": "5"},
+      "10": {"optimization": "6", "traditional": "8"},
+      "11": {"optimization": "8", "traditional": "8"},
+      "12": {"optimization": "6", "traditional": "6"},
+      "13": {"optimization": "1 1/2 (20.0%) / 2 (80.0%)", "traditional": "2 1/2"},
+      "14": {"optimization": "3 1/2 (2.4%) / 4 (97.6%)", "traditional": "5"},
+      "15": {"optimization": "6", "traditional": "8"},
+      "16": {"optimization": "6 (24.4%) / 8 (75.6%)", "traditional": "8"},
+      "17": {"optimization": "6", "traditional": "6"},
+      "18": {"optimization": "2", "traditional": "2 1/2"}
+    },
+    "table_6_valves_m": {
+      "E-101": [1.58, 0.00, 15.3, 0.89],
+      "E-102": [1.55, 0.00, 21.75, 0.91],
+      "E-103": [1.52, 0.00, 21.52, 0.22],
+      "E-104": [1.33, 0.25, 16.56, 0.00],
+      "E-105": [1.21, 0.13, 16.44, 0.00]
+    },
+    "table_7": {
+      "pipe_capital": {"optimization": 17516, "traditional": 20941},
+      "pump_capital_annualized": {"optimization": 3051, "traditional": 3051}
+    },
+    "table_8_traditional_flows": {"E-101": 13.2, "E-102": 30.1, "E-103": 39.6, "E-104": 16.4, "E-105": 4.6},
+    "table_9_operating": {"optimization": 8959, "traditional": 9605},
+    "table_10_total_annualized": {"optimization": 11712, "traditional": 12818},
+    "table_10_note": "The published totals annualize the pump cost twice; with Eq. (5) applied once they are 14357 and 15462 USD/year (see docs/errata.md).",
+    "cost_reduction_percent": 9.0
+  }
+}

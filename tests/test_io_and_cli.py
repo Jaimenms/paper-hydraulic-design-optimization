@@ -7,7 +7,7 @@ from cwnet.io.scilab_legacy import load_legacy_case
 from cwnet.io.yaml_io import load_case, save_case
 
 ROOT = Path(__file__).resolve().parents[1]
-LEGACY = ROOT / "docs" / "raw" / "scilab" / "v2.2" / "Dados"
+LEGACY = ROOT / "legacy" / "scilab" / "v2.2" / "Dados"
 
 
 def test_yaml_round_trip(tmp_path, grassroots_case):
@@ -38,10 +38,37 @@ def test_legacy_revamp_status():
     assert legacy.pipe(1).status.value == "existing" and legacy.pipe(1).diameter == "10"
 
 
-def test_cli_validate_and_optimize(tmp_path, capsys):
-    case = ROOT / "cases" / "paper1_grassroots.yaml"
-    assert main(["validate", str(case)]) == 0
+def test_cli_info_validate_run(tmp_path, capsys, monkeypatch):
+    monkeypatch.chdir(ROOT)
+    assert main(["info"]) == 0
+    out = capsys.readouterr().out
+    assert "paper1_grassroots" in out and "10.1080/00986445.2013.800484" in out
+    assert main(["validate", "paper1_grassroots"]) == 0
     assert "5 hydraulic circuits" in capsys.readouterr().out
-    assert main(["optimize", str(case), "--out", str(tmp_path)]) == 0
-    assert (tmp_path / "costs.csv").exists()
+    assert (
+        main(
+            [
+                "run",
+                "paper1_grassroots",
+                "--out",
+                str(tmp_path),
+                "--traditional",
+                "edgar_himmelblau",
+            ]
+        )
+        == 0
+    )
+    assert (tmp_path / "paper1_grassroots" / "costs.csv").exists()
+    assert (tmp_path / "paper1_grassroots" / "summary.json").exists()
     assert "Proposed / Curve 1" in capsys.readouterr().out
+
+
+def test_cli_eval_and_figures(tmp_path, capsys, monkeypatch):
+    monkeypatch.chdir(ROOT)
+    assert main(["eval", "--case", "paper1_grassroots", "--out", str(tmp_path / "eval")]) == 0
+    report = (tmp_path / "eval" / "report.md").read_text()
+    assert "Table XI" in report and "paper1_grassroots" in report
+    assert (tmp_path / "eval" / "paper1_grassroots.csv").exists()
+    assert main(["figures", "--case", "paper1_grassroots", "--out", str(tmp_path / "figures")]) == 0
+    assert (tmp_path / "figures" / "paper1_grassroots_digraph.png").exists()
+    assert (tmp_path / "figures" / "paper1_grassroots_costs.md").exists()

@@ -1,0 +1,957 @@
+ <HTML>
+  
+ <BODY bgcolor=#fdf1e3 leftMargin=20 marginheight=0 marginwidth=0>
+  
+ <TABLE cellSpacing=0 cellPadding=0 width="80%" border=0>
+ <TR>
+ <TD WIDTH=500><FONT size="5">Cooling Water Pipe Network Design
+ </FONT><br>
+ <FONT size="4">ver 1.0
+ </FONT></TD>
+ </TR></TABLE>
+  
+ <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+   <TBODY>
+   <TR>
+     <TD align=left width="25%"><IMG src="imagens/lineleft.gif"
+       border=0></TD>
+     <TD align=left><IMG src="imagens/line.gif" width="100%"></TD>
+     </TR></TBODY></TABLE>
+  
+ <BR>
+  
+ <center><table>
+ <BR>
+  
+ <tr>
+ <td width="50%">
+ <font size=3><center>
+ <FONT size=6><B>Optimization Results</B></FONT></center></font>
+ </td>
+ </tr>
+ </table></center>
+ <BR>
+ <center><table>
+ <tr>
+ <td width="50%" id="tabela1">
+ <font size=3><center>
+ <FONT size=4><B>Optimization Results</B></FONT></center></font>
+ </td>
+ </tr>
+ </table></center>
+ <CENTER><TABLE border=2 bgcolor=#e4e4e4>
+ <TR>
+  <TD ALIGN=middle><b>Index</b></TD>
+  <TD ALIGN=middle><b>Case</b></TD>
+  <TD ALIGN=middle><b>Desc.</b></TD>
+  <TD ALIGN=middle><b>FOB</b></TD>
+  <TD ALIGN=middle><b>Pump Op. Cost</b></TD>
+  <TD ALIGN=middle><b>Pump Cost</b></TD>
+  <TD ALIGN=middle><b>Pipe Cost</b></TD>
+  <TD ALIGN=middle><b>Flow Rate Deviation</b></TD>
+  <TD ALIGN=middle><b>Optimization</b></TD>
+  <TD ALIGN=middle><b>Penalty</b></TD>
+ </TR>
+ <TR>
+  <TD bgcolor="#BFBFBF" ALIGN=middle><b>-</b></TD>
+  <TD bgcolor="#BFBFBF" ALIGN=middle><b>-</b></TD>
+  <TD bgcolor="#BFBFBF" ALIGN=middle><b>-</b></TD>
+  <TD bgcolor="#BFBFBF" ALIGN=middle><b>(kUSD/y)</b></TD>
+  <TD bgcolor="#BFBFBF" ALIGN=middle><b>(kUSD/y)</b></TD>
+  <TD bgcolor="#BFBFBF" ALIGN=middle><b>(kUSD/y)</b></TD>
+  <TD bgcolor="#BFBFBF" ALIGN=middle><b>(kUSD/y)</b></TD>
+  <TD bgcolor="#BFBFBF" ALIGN=middle><b>kg/s</b></TD>
+  <TD bgcolor="#BFBFBF" ALIGN=middle><b>-</b></TD>
+  <TD bgcolor="#BFBFBF" ALIGN=middle><b>-</b></TD>
+ </TR>
+ <TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle><A HREF="Relat15_TRAD_1.htm">1</A></TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>TD</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>42.7599</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>23.1284</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>3.2093</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>16.4222</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>14.280165</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>-</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>-0.5</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle><A HREF="Relat15_TRAD2_1.htm">2</A></TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>TD2</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>42.864</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>19.3675</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>3.0446</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>20.4519</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>9.67282</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>-</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>-0.5</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle><A HREF="Relat15_PROP_LP_1.htm">3</A></TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>1</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>SP-LP</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>39.6847</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>20.1833</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>3.0446</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>16.4569</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0.0041983</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>Viable</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>-0.3827</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle><A HREF="Relat15_PROP_LP_2.htm">4</A></TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>2</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>SP-LP</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>41.7019</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>24.22</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>3.2093</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>14.2726</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0.0053724</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>Viable</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>-0.3837</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle><A HREF="Relat15_PROP_LP_3.htm">5</A></TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>3</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>SP-LP</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>43.9551</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>26.9112</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>3.3118</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>13.7321</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0.0058971</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>Viable</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>-0.3811</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle><A HREF="Relat15_PROP_LP_4.htm">6</A></TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>4</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>SP-LP</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>46.3202</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>29.6024</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>3.4095</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>13.3084</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0.0063088</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>Viable</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>-0.3676</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle><A HREF="Relat15_PROP_QP_1.htm">7</A></TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>1</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>SP-QP</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>39.6847</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>20.1831</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>3.0446</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>16.457</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0.0171988</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>Viable</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>-0.4562</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle><A HREF="Relat15_PROP_QP_2.htm">8</A></TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>2</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>SP-QP</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>41.7019</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>24.22</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>3.2093</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>14.2725</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0.0053420</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>Viable</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>-0.4333</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle><A HREF="Relat15_PROP_QP_3.htm">9</A></TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>3</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>SP-QP</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>43.9551</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>26.9112</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>3.3118</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>13.7321</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0.0058694</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>Viable</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>-0.4374</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle><A HREF="Relat15_PROP_QP_4.htm">10</A></TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>4</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>SP-QP</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>46.3202</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>29.6024</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>3.4095</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>13.3084</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0.0062829</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>Viable</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>-0.4371</TD>
+ </TR>
+ </TABLE>
+ 
+ <BR><BR>
+ <center><table>
+ </table></center>
+ 
+ <TABLE>
+ <TBODY>
+ <TR>
+ <TD WIDTH=10% ALIGN=middle>
+ <A HREF="graficos/Relat15_fig_01.gif">
+ <IMG src="graficos/Relat15_fig_01.gif" width=700></A></TD>
+ </TR>
+ </TBODY>
+ </TABLE>
+ 
+ <BR><BR>
+ <center><table>
+ </table></center>
+ 
+ <TABLE>
+ <TBODY>
+ <TR>
+ <TD WIDTH=10% ALIGN=middle>
+ <A HREF="graficos/Relat15_fig_02.gif">
+ <IMG src="graficos/Relat15_fig_02.gif" width=700></A></TD>
+ </TR>
+ </TBODY>
+ </TABLE>
+ 
+ <BR><BR>
+ <HTML>
+  
+ <BODY bgcolor=#fdf1e3 leftMargin=20 marginheight=0 marginwidth=0>
+  
+ <TABLE cellSpacing=0 cellPadding=0 width="80%" border=0>
+ <TR>
+ <TD WIDTH=500><FONT size="5">Cooling Water Pipe Network Design
+ </FONT><br>
+ <FONT size="4">ver 1.0
+ </FONT></TD>
+ </TR></TABLE>
+  
+ <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+   <TBODY>
+   <TR>
+     <TD align=left width="25%"><IMG src="imagens/lineleft.gif"
+       border=0></TD>
+     <TD align=left><IMG src="imagens/line.gif" width="100%"></TD>
+     </TR></TBODY></TABLE>
+  
+ <BR>
+  
+ <center><table>
+ <BR>
+  
+ <tr>
+ <td width="50%">
+ <font size=3><center>
+ <FONT size=6><B>Pipe Network Description</B></FONT></center></font>
+ </td>
+ </tr>
+ </table></center>
+ <BR>
+ <center><table>
+ <tr>
+ <td width="50%" id="tabela1">
+ <font size=3><center>
+ <FONT size=4><B>Data Details</B></FONT></center></font>
+ </td>
+ </tr>
+ </table></center>
+ <CENTER><TABLE border=2 bgcolor=#e4e4e4>
+ <TR>
+ <TD><table>
+  <TR><TD ALIGN=right><b>Project Name</b></TD>
+ </TD></TR>
+  <TR><TD ALIGN=right><b>User Name</b></TD>
+ </TD></TR>
+  <TR><TD ALIGN=right><b>Date</b></TD>
+ </TD></TR>
+  <TR><TD ALIGN=right><b>Document</b></TD>
+ </TD></TR>
+  <TR><TD ALIGN=right><b>Network Name</b></TD>
+ </TD></TR>
+  <TR><TD ALIGN=right><b>Network Description</b></TD>
+ </TD></TR>
+ </table></TD>
+ <TD><table>
+ <TD bgcolor="#FFFFcc" ALIGN=middle>Projeto Preliminar</TD>
+ </TD></TR>
+ <TD bgcolor="#FFFFcc" ALIGN=middle>Jaime Souza</TD>
+ </TD></TR>
+ <TD bgcolor="#FFFFcc" ALIGN=middle>30/11/2010</TD>
+ </TD></TR>
+ <TD bgcolor="#FFFFcc" ALIGN=middle>rede02</TD>
+ </TD></TR>
+ <TD bgcolor="#FFFFcc" ALIGN=middle>Distribuicao agua</TD>
+ </TD></TR>
+ <TD bgcolor="#FFFFcc" ALIGN=middle>Rede teste 2</TD>
+ </TD></TR>
+ </table></TD>
+ <TD><table>
+ <TR><TD ALIGN=left bgcolor="#BFBFBF" ALIGN=middle>-</TD></TR>
+ </TD></TR>
+ <TR><TD ALIGN=left bgcolor="#BFBFBF" ALIGN=middle>-</TD></TR>
+ </TD></TR>
+ <TR><TD ALIGN=left bgcolor="#BFBFBF" ALIGN=middle>-</TD></TR>
+ </TD></TR>
+ <TR><TD ALIGN=left bgcolor="#BFBFBF" ALIGN=middle>-</TD></TR>
+ </TD></TR>
+ <TR><TD ALIGN=left bgcolor="#BFBFBF" ALIGN=middle>-</TD></TR>
+ </TD></TR>
+ <TR><TD ALIGN=left bgcolor="#BFBFBF" ALIGN=middle>-</TD></TR>
+ </TD></TR>
+ </table></TD>
+ </TR>
+ </TABLE>
+ 
+ <BR><BR>
+ <center><table>
+ <tr>
+ <td width="50%" id="tabela1">
+ <font size=3><center>
+ <FONT size=4><B>Fluid</B></FONT></center></font>
+ </td>
+ </tr>
+ </table></center>
+ <CENTER><TABLE border=2 bgcolor=#e4e4e4>
+ <TR>
+ <TD><table>
+  <TR><TD ALIGN=right><b>Fluid Name</b></TD>
+ </TD></TR>
+  <TR><TD ALIGN=right><b>Density</b></TD>
+ </TD></TR>
+  <TR><TD ALIGN=right><b>Viscosity</b></TD>
+ </TD></TR>
+  <TR><TD ALIGN=right><b>Thermal Capacity</b></TD>
+ </TD></TR>
+  <TR><TD ALIGN=right><b>Inlet Temperature</b></TD>
+ </TD></TR>
+ </table></TD>
+ <TD><table>
+ <TD bgcolor="#FFFFcc" ALIGN=middle>Agua</TD>
+ </TD></TR>
+ <TD bgcolor="#FFFFcc" ALIGN=middle>995</TD>
+ </TD></TR>
+ <TD bgcolor="#FFFFcc" ALIGN=middle>0.72</TD>
+ </TD></TR>
+ <TD bgcolor="#FFFFcc" ALIGN=middle>4187</TD>
+ </TD></TR>
+ <TD bgcolor="#FFFFcc" ALIGN=middle>32</TD>
+ </TD></TR>
+ </table></TD>
+ <TD><table>
+ <TR><TD ALIGN=left bgcolor="#BFBFBF" ALIGN=middle>-</TD></TR>
+ </TD></TR>
+ <TR><TD ALIGN=left bgcolor="#BFBFBF" ALIGN=middle>kg/m3</TD></TR>
+ </TD></TR>
+ <TR><TD ALIGN=left bgcolor="#BFBFBF" ALIGN=middle>cP</TD></TR>
+ </TD></TR>
+ <TR><TD ALIGN=left bgcolor="#BFBFBF" ALIGN=middle>J/(kgoC)</TD></TR>
+ </TD></TR>
+ <TR><TD ALIGN=left bgcolor="#BFBFBF" ALIGN=middle>oC</TD></TR>
+ </TD></TR>
+ </table></TD>
+ </TR>
+ </TABLE>
+ 
+ <BR><BR>
+ <center><table>
+ <tr>
+ <td width="50%" id="tabela1">
+ <font size=3><center>
+ <FONT size=4><B>Pipes</B></FONT></center></font>
+ </td>
+ </tr>
+ </table></center>
+ <CENTER><TABLE border=2 bgcolor=#e4e4e4>
+ <TR>
+  <TD ALIGN=middle><b>Id.</b></TD>
+  <TD ALIGN=middle><b>Tag</b></TD>
+  <TD ALIGN=middle><b>Length</b></TD>
+  <TD ALIGN=middle><b>Roughness</b></TD>
+  <TD ALIGN=middle><b>Preliminar Internal Diameter</b></TD>
+  <TD ALIGN=middle><b>Pipe Fittings L/D</b></TD>
+  <TD ALIGN=middle><b>Fixed Head Loss</b></TD>
+ </TR>
+ <TR>
+  <TD bgcolor="#BFBFBF" ALIGN=middle><b>-</b></TD>
+  <TD bgcolor="#BFBFBF" ALIGN=middle><b>-</b></TD>
+  <TD bgcolor="#BFBFBF" ALIGN=middle><b>m</b></TD>
+  <TD bgcolor="#BFBFBF" ALIGN=middle><b>10-6 m</b></TD>
+  <TD bgcolor="#BFBFBF" ALIGN=middle><b>mm</b></TD>
+  <TD bgcolor="#BFBFBF" ALIGN=middle><b>-</b></TD>
+  <TD bgcolor="#BFBFBF" ALIGN=middle><b>m</b></TD>
+ </TR>
+ <TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>1</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>1</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>10</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>46</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>20</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>3</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>3</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>200</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>46</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>20</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>4</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>4</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>100</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>46</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>20</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>5</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>5</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>100</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>46</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>20</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>6</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>6</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>100</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>46</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>20</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>7</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>7</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>100</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>46</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>20</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>8</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>8</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>200</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>46</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>20</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>9</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>9</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>25</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>46</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>20</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>10</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>10</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>25</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>46</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>20</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>11</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>11</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>25</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>46</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>20</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>12</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>12</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>125</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>46</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>20</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>13</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>13</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>25</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>46</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>20</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>14</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>14</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>25</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>46</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>20</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>15</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>15</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>25</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>46</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>20</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>16</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>16</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>25</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>46</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>20</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>17</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>17</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>125</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>46</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>20</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>18</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>18</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>25</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>46</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>20</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0</TD>
+ </TR>
+ </TABLE>
+ 
+ <BR><BR>
+ <center><table>
+ <tr>
+ <td width="50%" id="tabela1">
+ <font size=3><center>
+ <FONT size=4><B>Heat Exchangers</B></FONT></center></font>
+ </td>
+ </tr>
+ </table></center>
+ <CENTER><TABLE border=2 bgcolor=#e4e4e4>
+ <TR>
+  <TD ALIGN=middle><b>Id.</b></TD>
+  <TD ALIGN=middle><b>Tag</b></TD>
+  <TD ALIGN=middle><b>Rated flow rate</b></TD>
+  <TD ALIGN=middle><b>Rated head loss</b></TD>
+ </TR>
+ <TR>
+  <TD bgcolor="#BFBFBF" ALIGN=middle><b>-</b></TD>
+  <TD bgcolor="#BFBFBF" ALIGN=middle><b>-</b></TD>
+  <TD bgcolor="#BFBFBF" ALIGN=middle><b>kg/s</b></TD>
+  <TD bgcolor="#BFBFBF" ALIGN=middle><b>m</b></TD>
+ </TR>
+ <TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>19</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>E-101</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>11.8</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>5.4</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>20</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>E-102</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>28.7</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>6.2</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>21</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>E-103</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>35.6</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>4.7</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>22</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>E-104</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>15.6</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>2.8</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>23</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>E-105</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>3.1</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>1.2</TD>
+ </TR>
+ </TABLE>
+ 
+ <BR><BR>
+ <center><table>
+ <tr>
+ <td width="50%" id="tabela1">
+ <font size=3><center>
+ <FONT size=4><B>Specifications</B></FONT></center></font>
+ </td>
+ </tr>
+ </table></center>
+ <CENTER><TABLE border=2 bgcolor=#e4e4e4>
+ <TR>
+  <TD ALIGN=middle><b>Id.</b></TD>
+  <TD ALIGN=middle><b>Tag</b></TD>
+  <TD ALIGN=middle><b>Type (P or W)</b></TD>
+  <TD ALIGN=middle><b>Specification</b></TD>
+  <TD ALIGN=middle><b>Height</b></TD>
+ </TR>
+ <TR>
+  <TD bgcolor="#BFBFBF" ALIGN=middle><b>-</b></TD>
+  <TD bgcolor="#BFBFBF" ALIGN=middle><b>-</b></TD>
+  <TD bgcolor="#BFBFBF" ALIGN=middle><b>P or W</b></TD>
+  <TD bgcolor="#BFBFBF" ALIGN=middle><b>bar or kg/s</b></TD>
+  <TD bgcolor="#BFBFBF" ALIGN=middle><b>m</b></TD>
+ </TR>
+ <TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>1</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>Cooling Tower Source</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>P</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>10</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>Cooling Tower Return</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>P</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>5</TD>
+ </TR>
+ </TABLE>
+ 
+ <BR><BR>
+ <HTML>
+  
+ <BODY bgcolor=#fdf1e3 leftMargin=20 marginheight=0 marginwidth=0>
+  
+ <TABLE cellSpacing=0 cellPadding=0 width="80%" border=0>
+ <TR>
+ <TD WIDTH=500><FONT size="5">Cooling Water Pipe Network Design
+ </FONT><br>
+ <FONT size="4">ver 1.0
+ </FONT></TD>
+ </TR></TABLE>
+  
+ <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+   <TBODY>
+   <TR>
+     <TD align=left width="25%"><IMG src="imagens/lineleft.gif"
+       border=0></TD>
+     <TD align=left><IMG src="imagens/line.gif" width="100%"></TD>
+     </TR></TBODY></TABLE>
+  
+ <BR>
+  
+ <center><table>
+ <BR>
+  
+ <tr>
+ <td width="50%">
+ <font size=3><center>
+ <FONT size=6><B>Optimization Data</B></FONT></center></font>
+ </td>
+ </tr>
+ </table></center>
+ <BR>
+ <center><table>
+ <tr>
+ <td width="50%" id="tabela1">
+ <font size=3><center>
+ <FONT size=4><B>Pump Characteristic Curves</B></FONT></center></font>
+ </td>
+ </tr>
+ </table></center>
+ <CENTER><TABLE border=2 bgcolor=#e4e4e4>
+ <TR>
+  <TD ALIGN=middle><b>Id.</b></TD>
+  <TD ALIGN=middle><b>Tag</b></TD>
+  <TD ALIGN=middle><b>Coeficient 3</b></TD>
+  <TD ALIGN=middle><b>Coeficient 2</b></TD>
+  <TD ALIGN=middle><b>Coeficient 1</b></TD>
+  <TD ALIGN=middle><b>Coeficient 0</b></TD>
+  <TD ALIGN=middle><b>Rated Flow Rate</b></TD>
+ </TR>
+ <TR>
+  <TD bgcolor="#BFBFBF" ALIGN=middle><b>-</b></TD>
+  <TD bgcolor="#BFBFBF" ALIGN=middle><b>-</b></TD>
+  <TD bgcolor="#BFBFBF" ALIGN=middle><b>m/(kg/s)^3</b></TD>
+  <TD bgcolor="#BFBFBF" ALIGN=middle><b>m/(kg/s)^2</b></TD>
+  <TD bgcolor="#BFBFBF" ALIGN=middle><b>m/(kg/s)^1</b></TD>
+  <TD bgcolor="#BFBFBF" ALIGN=middle><b>m/(kg/s)^0</b></TD>
+  <TD bgcolor="#BFBFBF" ALIGN=middle><b>m³/s</b></TD>
+ </TR>
+ <TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>1</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>Curve 1</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>-415.5675</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>-135.0075</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>31.5</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0.08</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>2</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>Curve 2</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>-498.681</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>-162.009</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>37.8</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0.08</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>3</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>Curve 3</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>-554.09</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>-180.01</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>42</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0.08</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>4</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>Curve 4</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>-609.499</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>-198.011</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>46.2</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0.08</TD>
+ </TR>
+ </TABLE>
+ 
+ <BR><BR>
+ <center><table>
+ <tr>
+ <td width="50%" id="tabela1">
+ <font size=3><center>
+ <FONT size=4><B>Possible Pipe Set</B></FONT></center></font>
+ </td>
+ </tr>
+ </table></center>
+ <CENTER><TABLE border=2 bgcolor=#e4e4e4>
+ <TR>
+  <TD ALIGN=middle><b>Tag</b></TD>
+  <TD ALIGN=middle><b>Internal Diameter</b></TD>
+  <TD ALIGN=middle><b>External Diameter</b></TD>
+  <TD ALIGN=middle><b>Nominal Diameter</b></TD>
+  <TD ALIGN=middle><b>Linear Cost</b></TD>
+ </TR>
+ <TR>
+  <TD bgcolor="#BFBFBF" ALIGN=middle><b>-</b></TD>
+  <TD bgcolor="#BFBFBF" ALIGN=middle><b>mm</b></TD>
+  <TD bgcolor="#BFBFBF" ALIGN=middle><b>mm</b></TD>
+  <TD bgcolor="#BFBFBF" ALIGN=middle><b>in</b></TD>
+  <TD bgcolor="#BFBFBF" ALIGN=middle><b>USD/m/year</b></TD>
+ </TR>
+ <TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>1/2</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>15.8</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>21.3</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0.5</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0.2382237</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>3/4</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>21</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>26.7</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0.75</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0.4270052</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>1</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>26.6</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>33.4</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>1</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0.6460371</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>1 1/4</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>35.1</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>42.2</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>1.25</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>0.8907176</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>1 1/2</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>40.9</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>48.3</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>1.5</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>1.1579921</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>2</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>52.5</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>60.3</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>2</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>1.7519831</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>2 1/2</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>62.7</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>73</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>2.5</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>2.4155304</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>3</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>77.9</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>88.9</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>3</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>3.1403501</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>3 1/2</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>90.1</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>101.6</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>3.5</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>3.920438</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>4</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>102.3</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>114.3</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>4</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>4.75119</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>5</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>128.2</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>141.3</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>5</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>6.5506588</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>6</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>154.1</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>168.3</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>6</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>8.516292</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>8</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>202.7</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>219.1</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>8</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>12.884717</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>10</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>254.5</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>273</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>10</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>17.764683</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>12</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>303.3</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>323.9</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>12</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>23.095269</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>14</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>333.3</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>355.6</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>14</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>28.832316</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>16</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>381</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>406.4</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>16</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>34.941966</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>18</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>428.7</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>457.2</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>18</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>41.397219</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>20</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>477.8</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>508</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>20</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>48.17591</TD>
+ </TR>
+  <TD bgcolor="#ffffcc" ALIGN=middle>24</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>574.6</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>609.6</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>24</TD>
+  <TD bgcolor="#ffffcc" ALIGN=middle>62.631886</TD>
+ </TR>
+ </TABLE>
+ 
+ <BR><BR>
+ <center><table>
+ <tr>
+ <td width="50%" id="tabela1">
+ <font size=3><center>
+ <FONT size=4><B>Optimization Data</B></FONT></center></font>
+ </td>
+ </tr>
+ </table></center>
+ <CENTER><TABLE border=2 bgcolor=#e4e4e4>
+ <TR>
+ <TD><table>
+  <TR><TD ALIGN=right><b>Pump Efficiency</b></TD>
+ </TD></TR>
+  <TR><TD ALIGN=right><b>Number of hours</b></TD>
+ </TD></TR>
+  <TR><TD ALIGN=right><b>Energy cost</b></TD>
+ </TD></TR>
+  <TR><TD ALIGN=right><b>Interest rate</b></TD>
+ </TD></TR>
+  <TR><TD ALIGN=right><b>Number of Years</b></TD>
+ </TD></TR>
+ </table></TD>
+ <TD><table>
+ <TD bgcolor="#FFFFcc" ALIGN=middle>0.6</TD>
+ </TD></TR>
+ <TD bgcolor="#FFFFcc" ALIGN=middle>8760</TD>
+ </TD></TR>
+ <TD bgcolor="#FFFFcc" ALIGN=middle>0.1</TD>
+ </TD></TR>
+ <TD bgcolor="#FFFFcc" ALIGN=middle>0.12</TD>
+ </TD></TR>
+ <TD bgcolor="#FFFFcc" ALIGN=middle>20</TD>
+ </TD></TR>
+ </table></TD>
+ <TD><table>
+ <TR><TD ALIGN=left bgcolor="#BFBFBF" ALIGN=middle>-</TD></TR>
+ </TD></TR>
+ <TR><TD ALIGN=left bgcolor="#BFBFBF" ALIGN=middle>hours/year</TD></TR>
+ </TD></TR>
+ <TR><TD ALIGN=left bgcolor="#BFBFBF" ALIGN=middle>USD/kWh</TD></TR>
+ </TD></TR>
+ <TR><TD ALIGN=left bgcolor="#BFBFBF" ALIGN=middle>-</TD></TR>
+ </TD></TR>
+ <TR><TD ALIGN=left bgcolor="#BFBFBF" ALIGN=middle>years</TD></TR>
+ </TD></TR>
+ </table></TD>
+ </TR>
+ </TABLE>
+ 
+ <BR><BR>
+ <HTML>
+  
+ <BODY bgcolor=#fdf1e3 leftMargin=20 marginheight=0 marginwidth=0>
+  
+ <TABLE cellSpacing=0 cellPadding=0 width="80%" border=0>
+ <TR>
+ <TD WIDTH=500><FONT size="5">Cooling Water Pipe Network Design
+ </FONT><br>
+ <FONT size="4">ver 1.0
+ </FONT></TD>
+ </TR></TABLE>
+  
+ <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+   <TBODY>
+   <TR>
+     <TD align=left width="25%"><IMG src="imagens/lineleft.gif"
+       border=0></TD>
+     <TD align=left><IMG src="imagens/line.gif" width="100%"></TD>
+     </TR></TBODY></TABLE>
+  
+ <BR>
+  
+ <center><table>
+ <BR>
+  
+ <tr>
+ <td width="50%">
+ <font size=3><center>
+ <FONT size=6><B>Pipe Network Topology</B></FONT></center></font>
+ </td>
+ </tr>
+ </table></center>
+ <BR>
+ <center><table>
+ <tr>
+ <td width="50%"  id="figura0">
+ <font size=3><center>
+ <FONT size=4><B>Digrafo da Rede</B></FONT></center></font>
+ </td>
+ </tr>
+ </table></center>
+ 
+ <TABLE>
+ <TBODY>
+ <TR>
+ <TD WIDTH=10% ALIGN=middle>
+ <A HREF="graficos/Relat15_rede.gif">
+ <IMG src="graficos/Relat15_rede.gif" width=700></A></TD>
+ </TR>
+ </TBODY>
+ </TABLE>
+ 
+ <BR><BR><BR>
+   <TABLE><TR>
+ <TD WIDTH=90?><DIV ALIGN=RIGHT><A href=Relat15.htm?comheader=2" target="_blank"
+ ><img src="imagens/printer.gif" border="0"></A></DIV></TD>
+ </TR>
+ </TABLE>
+ <BR><BR>
+ </BODY>
+ </HTML>

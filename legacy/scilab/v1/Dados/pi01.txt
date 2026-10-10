@@ -1,0 +1,33 @@
+// PARTE 1) Definindo as tubulações possíveis
+// Linhas devem começar com a expressão "PIPE" seguida pelo menos um campo abaixo:
+//  <tag:"X">
+//  <DIN:"X">  --> para diametro interno
+//  <DOUT:"X"> --> para diametro externo
+
+PIPE: <tag:"1/2">   <DOUT:21.3>  <DIN:15.8> <DN:0.5>
+PIPE: <tag:"3/4">   <DOUT:26.7>  <DIN:21.0> <DN:0.75>
+PIPE: <tag:"1">     <DOUT:33.4>  <DIN:26.6> <DN:1.0>
+PIPE: <tag:"1 1/4"> <DOUT:42.2>  <DIN:35.1> <DN:1.25>
+PIPE: <tag:"1 1/2"> <DOUT:48.3>  <DIN:40.9> <DN:1.5>
+PIPE: <tag:"2">     <DOUT:60.3>  <DIN:52.5> <DN:2.0>
+PIPE: <tag:"2 1/2"> <DOUT:73.0>  <DIN:62.7> <DN:2.5>
+PIPE: <tag:"3">     <DOUT:88.9>  <DIN:77.9> <DN:3.0>
+PIPE: <tag:"3 1/2"> <DOUT:101.6> <DIN:90.1> <DN:3.5>
+PIPE: <tag:"4">     <DOUT:114.3> <DIN:102.3> <DN:4.0>
+PIPE: <tag:"5">     <DOUT:141.3> <DIN:128.2> <DN:5.0>
+PIPE: <tag:"6">     <DOUT:168.3> <DIN:154.1> <DN:6.0>
+PIPE: <tag:"8">     <DOUT:219.1> <DIN:202.7> <DN:8.0>
+PIPE: <tag:"10">    <DOUT:273.0> <DIN:254.5> <DN:10.0>
+PIPE: <tag:"12">    <DOUT:323.9> <DIN:303.3> <DN:12.0>
+PIPE: <tag:"14">    <DOUT:355.6> <DIN:333.3> <DN:14.0>
+PIPE: <tag:"16">    <DOUT:406.4> <DIN:381.0> <DN:16.0>
+PIPE: <tag:"18">    <DOUT:457.2> <DIN:428.7> <DN:18.0>
+PIPE: <tag:"20">    <DOUT:508.0> <DIN:477.8> <DN:20.0>
+PIPE: <tag:"24">    <DOUT:609.6> <DIN:574.6> <DN:24.0>
+
+// PARTE 2) Definindo os parametros dos custos
+// Linhas devem começar com a expressão "PIPECOST" seguida pelo menos um campo abaixo:
+//  <alfa:"X">
+//  <beta:"X">
+
+PIPECOST: <alfa:7.0386> <beta:1.4393>

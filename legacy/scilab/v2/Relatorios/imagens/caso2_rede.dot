@@ -1,0 +1,38 @@
+ digraph REDE {
+ ranksep=.75; rankdir=LR;
+ node [width=.1,height=.1,shape=circle,style=filled];
+ edge [color=blue,style=bold];
+ 1 -> 2  [label="1",penwidth=3, style=dashed];
+ 3 -> 4  [label="3",penwidth=3, style=dashed];
+ 4 -> 5  [label="4",penwidth=3, style=dashed];
+ 5 -> 6  [label="5",penwidth=3, style=dashed];
+ 7 -> 8  [label="6",penwidth=3, style=dashed];
+ 8 -> 9  [label="7",penwidth=3, style=dashed];
+ 9 -> 10  [label="8",penwidth=3, style=dashed];
+ 4 -> 11  [label="9",penwidth=3, style=dashed];
+ 4 -> 12  [label="10",penwidth=3, style=dashed];
+ 5 -> 13  [label="11",penwidth=3, style=dashed];
+ 6 -> 14  [label="12",penwidth=3, style=dashed];
+ 6 -> 15  [label="13",penwidth=3, style=dashed];
+ 16 -> 9  [label="14",penwidth=3, style=dashed];
+ 17 -> 9  [label="15",penwidth=3, style=dashed];
+ 18 -> 8  [label="16",penwidth=3, style=dashed];
+ 19 -> 7  [label="17",penwidth=3, style=dashed];
+ 20 -> 7  [label="18",penwidth=3, style=dashed];
+   subgraph cluster1 {
+ node [width=.1,height=.1,shape=circle,style=filled];
+ edge [color=blue,style=bold];
+ 2 -> 3  [label="2 (P-101)",len=2, style=dashed, color=green];
+ label = "Pumps";
+ }
+   subgraph cluster2 {
+ node [width=.1,height=.1,shape=circle,style=filled];
+ edge [color=blue,style=bold];
+ 11 -> 16  [label="19 (E-101*)",len=2, style=bold, color=red];
+ 12 -> 17  [label="20 (E-102)",len=2, style=bold, color=red];
+ 13 -> 18  [label="21 (E-103)",len=2, style=bold, color=red];
+ 14 -> 19  [label="22 (E-104)",len=2, style=bold, color=red];
+ 15 -> 20  [label="23 (E-105*)",len=2, style=bold, color=red];
+ label = "Heat Exchangers";
+ }
+ }

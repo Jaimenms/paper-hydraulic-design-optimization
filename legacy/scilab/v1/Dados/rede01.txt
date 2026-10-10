@@ -1,0 +1,145 @@
+﻿// PARTE 1) Definição do caso
+
+// Linhas devem começar com a expressão "CASO" seguida pelo menos um campo abaixo:
+//  <projeto:"X">
+//  <usuario:"X">
+//  <data:"X">
+//  <documento:"X">
+//  <nome_rede:"X">
+//  <desc_rede:"X">
+
+CASO: <projeto:"Projeto Preliminar">
+CASO: <usuario:"Jaime Souza">
+CASO: <data:"19/06/2010">
+CASO: <documento:"rede01">
+CASO: <nome_rede:"Distribuicao agua">
+CASO: <desc_rede:"Rede de distruicao para trocadores e bombas">
+
+
+
+
+// PARTE 2) Definição do fluido
+
+// Linhas devem começar com a expressão "FLUIDO" seguida dos campos abaixo:
+//  <tag:"X"> --> X é o nome do fluido (n�o usar caracteres especiais ou acentos)
+//  <dens:X>  --> X é a densidade do fluido em kg/m3
+//  <visc:X>  --> X é a viscosidade em cP
+//  <cp:X>    --> X é a capacidade térmica em J/kg°C
+
+FLUIDO: <tag:"Agua">
+FLUIDO: <dens:996>
+FLUIDO: <visc:0.79>
+FLUIDO: <cp: 4187>
+FLUIDO: <temp: 32>
+
+
+
+
+// PARTE 3) Definição das arestas consumidoras de utilidade fria
+
+// Linha deve começar com a expressão "EQUIP" seguida dos campos abaixo:
+//  <ind:X>   --> X é o indice do equipamento
+//  <tag:"X"> --> X é o tag do equipamento
+//  <k:X>     --> X é a vazão de consumo em kg/s
+//  <F:X>     --> X é a perda de carga em m para a vazão k
+
+EQUIP: <ind:11> <tag:"E-101"> <k:11.8> <F:5.4>
+EQUIP: <ind:16> <tag:"E-102"> <k:28.7> <F:6.2>
+EQUIP: <ind:20> <tag:"E-103"> <k:35.6> <F:4.7>
+EQUIP: <ind:23> <tag:"E-104"> <k:15.6> <F:2.8>
+
+
+
+
+// PARTE 4) Definição da aresta da bomba
+
+// Linha deve começar com a expressão "BOMBA" seguida dos campos abaixo:
+//  <ind:X>   --> X é o indice do equipamento
+//  <tag:"X"> --> X é o tag do equipamento
+//  <coefi:X> --> X são os coeficientes do polinomio que relaciona a
+//  vazão em m3/s e o head em m.
+
+BOMBA: <ind:2> <tag:"B-101"> <coef3:0> <coef2:-554.09> <coef1:-180.0> <coef0:42.0> <qrated:0.08> 
+
+
+
+
+// PARTE 5) Definição das arestas de tubulação
+
+// Linha deve começar com a expressão "LINHA" seguida dos campos abaixo:
+//  <ind:"X"> --> X é o indice da linha
+//  <tag:"X"> --> X é o tag da linha
+//  <L:X>     --> X é o comprimento equivalente da linha em m
+//  <e:X>     --> X é a rugosidade da linha em mm
+//  <q:X>     --> X é a vaz�o estimada em m�/h
+//  <di:X>    --> X é o diametro interno em mm
+//  <LDac:X>  --> X é o n�mero de L/D de acidententes
+//  <Fac:X>   --> X é a perda de carga localizada em m
+
+LINHA: <ind:1> <tag:"1"> <L:10> <e:45> <di:20> <LDac:0> <Fac:0>
+LINHA: <ind:3> <tag:"3"> <L:100> <e:45> <di:20> <LDac:0> <Fac:0>
+LINHA: <ind:4> <tag:"4"> <L:100> <e:45> <di:20> <LDac:0> <Fac:0>
+LINHA: <ind:5> <tag:"5"> <L:100> <e:45> <di:20> <LDac:0> <Fac:0>
+LINHA: <ind:6> <tag:"6"> <L:100> <e:45> <di:20> <LDac:0> <Fac:0>
+LINHA: <ind:7> <tag:"7"> <L:100> <e:45> <di:20> <LDac:0> <Fac:0>
+LINHA: <ind:8> <tag:"8"> <L:100> <e:45> <di:20> <LDac:0> <Fac:0>
+LINHA: <ind:9> <tag:"9"> <L:10> <e:45> <di:20> <LDac:0> <Fac:0>
+LINHA: <ind:10> <tag:"10"> <L:10> <e:45> <di:20> <LDac:0> <Fac:0>
+LINHA: <ind:12> <tag:"12"> <L:10> <e:45> <di:20> <LDac:0> <Fac:0>
+LINHA: <ind:13> <tag:"13"> <L:10> <e:45> <di:20> <LDac:0> <Fac:0>
+LINHA: <ind:14> <tag:"14"> <L:10> <e:45> <di:20> <LDac:0> <Fac:0>
+LINHA: <ind:15> <tag:"15"> <L:10> <e:45> <di:20> <LDac:0> <Fac:0>
+LINHA: <ind:17> <tag:"17"> <L:10> <e:45> <di:20> <LDac:0> <Fac:0>
+LINHA: <ind:18> <tag:"18"> <L:10> <e:45> <di:20> <LDac:0> <Fac:0>
+LINHA: <ind:19> <tag:"19"> <L:10> <e:45> <di:20> <LDac:0> <Fac:0>
+LINHA: <ind:21> <tag:"21"> <L:10> <e:45> <di:20> <LDac:0> <Fac:0>
+LINHA: <ind:22> <tag:"22"> <L:10> <e:45> <di:20> <LDac:0> <Fac:0>
+LINHA: <ind:24> <tag:"24"> <L:10> <e:45> <di:20> <LDac:0> <Fac:0>
+
+
+
+// PARTE 6) Definição a rede de escoamento
+
+// Linha deve começar com a expressão "REDE" seguida dos campos abaixo:
+//  <ind_aresta:"X">  --> X é o índice da aresta
+//  <noh_montante:X>  --> X é o índice do n� a montante da aresta
+//  <noh_jusante:X>   --> X é o índice do n� a jusante da aresta
+
+REDE: <ind_aresta:1> <ind_noh_montante:1> <ind_noh_jusante:2> 
+REDE: <ind_aresta:2> <ind_noh_montante:2> <ind_noh_jusante:3> 
+REDE: <ind_aresta:3> <ind_noh_montante:3> <ind_noh_jusante:4> 
+REDE: <ind_aresta:4> <ind_noh_montante:4> <ind_noh_jusante:5> 
+REDE: <ind_aresta:5> <ind_noh_montante:5> <ind_noh_jusante:6> 
+REDE: <ind_aresta:6> <ind_noh_montante:7> <ind_noh_jusante:8> 
+REDE: <ind_aresta:7> <ind_noh_montante:8> <ind_noh_jusante:9> 
+REDE: <ind_aresta:8> <ind_noh_montante:9> <ind_noh_jusante:10> 
+REDE: <ind_aresta:9> <ind_noh_montante:4> <ind_noh_jusante:11> 
+REDE: <ind_aresta:10> <ind_noh_montante:11> <ind_noh_jusante:12> 
+REDE: <ind_aresta:11> <ind_noh_montante:12> <ind_noh_jusante:13> 
+REDE: <ind_aresta:12> <ind_noh_montante:13> <ind_noh_jusante:14> 
+REDE: <ind_aresta:13> <ind_noh_montante:14> <ind_noh_jusante:9> 
+REDE: <ind_aresta:14> <ind_noh_montante:4> <ind_noh_jusante:15> 
+REDE: <ind_aresta:15> <ind_noh_montante:15> <ind_noh_jusante:16> 
+REDE: <ind_aresta:16> <ind_noh_montante:16> <ind_noh_jusante:17> 
+REDE: <ind_aresta:17> <ind_noh_montante:17> <ind_noh_jusante:18> 
+REDE: <ind_aresta:18> <ind_noh_montante:18> <ind_noh_jusante:9> 
+REDE: <ind_aresta:19> <ind_noh_montante:5> <ind_noh_jusante:19> 
+REDE: <ind_aresta:20> <ind_noh_montante:19> <ind_noh_jusante:20> 
+REDE: <ind_aresta:21> <ind_noh_montante:20> <ind_noh_jusante:8> 
+REDE: <ind_aresta:22> <ind_noh_montante:6> <ind_noh_jusante:21> 
+REDE: <ind_aresta:23> <ind_noh_montante:21> <ind_noh_jusante:22> 
+REDE: <ind_aresta:24> <ind_noh_montante:22> <ind_noh_jusante:7> 
+
+
+
+// PARTE 7) Definição dos vertices
+
+// Linha deve começar com a expressão "VERTICE" seguida dos campos abaixo:
+//  <ind_vertice:"X">  --> X é o índice do vertice
+//  <tag_vertice:"X">  --> X é o tag do vertice
+//  <tipo:X>           --> X é o tipo de especificação sendo P para pressão e W para vaz�o externa
+//  <esp:X>            --> X é o valor da especificação (em kgf/cm2 se pressão P e em kg/s se vazão Q)
+//  <z:X>              --> X é o valor da cota do vertice (em m)
+
+VERTICE: <ind_vertice:1> <tag_vertice:"Cooling Tower Source"> <tipo:"P"> <esp:0> <z:0>
+VERTICE: <ind_vertice:10> <tag_vertice:"Cooling Tower Return"> <tipo:"P"> <esp:0> <z:5>

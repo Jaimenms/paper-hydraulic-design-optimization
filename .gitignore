@@ -22,3 +22,6 @@ results/
 .DS_Store
 .idea/
 .vscode/
+
+# generated outputs (make run / make eval / make figures)
+figures/

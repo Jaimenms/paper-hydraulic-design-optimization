@@ -1,0 +1,40 @@
+// PARTE 1) Definição das condições dos trocadores de calor
+
+// Linha deve começar com a expressão "TASK" seguida dos campos abaixo:
+//  <tag:"X"> --> X é o tag do trocador
+//  <mh:X>    --> X é a vazão mássica do fluido quente em kg/s
+//  <Cph:X>   --> X é a capacidade térmica do fluido quente em J/kg°C
+//  <Thi:X>   --> X é a temperatura de entrada do fluido quente em °C
+//  <Tho_sp:X>--> X é a temperatura de desajada de saída do fluido quente em °C
+//  <mc_sp:X> --> X é a vazão mássica desejada do fluido frio em kg/s
+//  <Tco_sp:X>--> X é a temperatura de desajada de saída do fluido frio em °C
+
+TASK: <tag:"E-101"> <mh:12.0> <Cph:2200> <Thi:80>  <Tho_sp:65> <mc_sp:11.8> <Tco_sp:40> 
+TASK: <tag:"E-102"> <mh:12.0> <Cph:2000> <Thi:120> <Tho_sp:80> <mc_sp:28.7> <Tco_sp:40>
+TASK: <tag:"E-103"> <mh:10.5> <Cph:2840> <Thi:80>  <Tho_sp:40> <mc_sp:35.6> <Tco_sp:40>
+TASK: <tag:"E-104"> <mh:8.5>  <Cph:2200> <Thi:69>  <Tho_sp:41> <mc_sp:15.6> <Tco_sp:40>
+TASK: <tag:"E-105"> <mh:1.7>  <Cph:2200> <Thi:69>  <Tho_sp:41> <mc_sp:3.1>  <Tco_sp:40>
+
+
+
+// PARTE 2) Definição do projeto dos trocadores de calor
+
+// Linha deve começar com a expressão "DESIGN" seguida dos campos abaixo:
+//  <tag:"X"> --> X é o tag do trocador
+//  <A:X>     --> X é a área de troca térmica em m²
+//  <hi_sp:x> --> Valores de projeto dos coeficientes de convec??o no interior dos tubos (W/m^2K)
+//  <he_sp:x> --> Valores de projeto dos coeficientes de convec?ao no exterior dos tubos (W/m^2K)
+//  <Rfi:x>   --> Resist?ncias de dep?sito no interior dos tubos (m^2K/W)
+//  <Rfe:x>   --> Resist?ncias de dep?sito no exterior do casco (m^2K/W)
+//  <kt:x>    --> Condutividade t?rmica dos tubos (W/mK)
+//  <Dti:x>   --> Di?metro interno dos tubos (m)
+//  <Dte:x>   --> Di?metro externo dos tubos (m)
+//  <ic:x>    --> Identificadores da configura??o (1 = paralelo, 2 = contracorrente, 3 = 1:N)
+//  <it:x>    --> Identificadores do fluido que escoa no interior dos tubos (1 = frio, 0 = quente)
+
+DESIGN: <tag:"E-101"> <A:27.3> <hi_sp:10615> <he_sp:658> <Rfi:0.000255> <Rfe:0.000255> <kt:20.0> <Dti:0.01575> <Dte:0.01905 > <ic:3> <it:1>
+DESIGN: <tag:"E-102"> <A:76.7>  <hi_sp:10651> <he_sp:266> <Rfi:0.000380> <Rfe:0.000380> <kt:20.0> <Dti:0.01575> <Dte:0.01905 > <ic:3> <it:1>
+DESIGN: <tag:"E-103"> <A:133.6> <hi_sp:8864>  <he_sp:923> <Rfi:0.000240> <Rfe:0.000240> <kt:20.0> <Dti:0.01575> <Dte:0.01905 > <ic:3> <it:1>
+DESIGN: <tag:"E-104"> <A:109.5> <hi_sp:6187>  <he_sp:450> <Rfi:0.000245> <Rfe:0.000245> <kt:20.0> <Dti:0.01575> <Dte:0.01905 > <ic:3> <it:1>
+DESIGN: <tag:"E-105"> <A:47.4> <hi_sp:3645>  <he_sp:216> <Rfi:0.00049> <Rfe:0.00049> <kt:20.0> <Dti:0.01575> <Dte:0.01905 > <ic:3> <it:1>
+

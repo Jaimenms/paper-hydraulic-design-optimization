@@ -1,6 +1,6 @@
 """Build and execute the reproduction notebooks.
 
-Usage: ``uv run python scripts/build_notebooks.py [--no-execute]``
+Usage: ``uv run python scripts/build_notebooks.py [--no-execute] [--only NAME ...]``
 
 The notebooks are generated from this script so that they can be rebuilt after changes in
 the library; executed copies (with outputs) are written to ``notebooks/``.
@@ -547,8 +547,9 @@ print("redução vs tradicional consistente: %.1f %%" % (100 * (1 - study.best.c
         md("""
 ## Nota: ranking com custos totalmente anualizados
 
-Se o investimento em tubos também for anualizado (Eq. 16), a bomba 2 passa a ser a melhor
-alternativa de revamp (menor custo de energia compensa o maior investimento em tubos):
+Se o investimento em tubos também for anualizado (Eq. 16), a melhor alternativa de revamp passa a
+ser **manter a bomba existente (curva 1)**, com 21 676 USD/ano: o menor custo de energia compensa o
+maior investimento em tubos (ver `docs/errata.md`):
 """),
         code('display(tables.cost_comparison_table(study, basis="annualized"))'),
         md("## Verificação: a rede otimizada entrega as vazões especificadas"),
@@ -737,13 +738,13 @@ def legacy() -> nbformat.NotebookNode:
 # 05 · Casos legados do código Scilab (v2.2)
 
 O código Scilab original lia ficheiros `caso*.txt`. O conversor `cwnet.io.load_legacy_case`
-transforma-os em `DesignCase`; aqui executamos os cinco casos de `docs/raw/scilab/v2.2/Dados`
+transforma-os em `DesignCase`; aqui executamos os cinco casos de `legacy/scilab/v2.2/Dados`
 e comparamos com os relatórios HTML gerados pelo Scilab (`Relatorios/caso*.htm`).
 """),
         code(HEADER),
         code("""
 from cwnet.io import load_legacy_case
-LEGACY = Path("../docs/raw/scilab/v2.2/Dados")
+LEGACY = Path("../legacy/scilab/v2.2/Dados")
 SCILAB = {  # (total, operating, pump, pipe) kUSD/y from the Scilab reports; the traditional of caso2 is stale (see notebook 02)
     "caso1": {"Traditional (edgar_himmelblau)": (42.815, 23.184, 3.209, 16.422), "Curve 1": (39.811, 20.183, 3.045, 16.583), "Curve 2": (41.768, 24.22, 3.209, 14.339), "Curve 3": (43.939, 26.911, 3.312, 13.716), "Curve 4": (46.292, 29.602, 3.409, 13.281)},
     "caso2": {"Curve 1": (43.746, 18.265, 0, 25.481), "Curve 2": (34.622, 21.918, 3.209, 9.495), "Curve 3": (32.857, 24.353, 3.312, 5.192), "Curve 4": (33.142, 26.789, 3.409, 2.944)},
@@ -779,12 +780,12 @@ tubulações `new`, bomba nova) — Tabela 19 do rascunho do artigo.
 
 
 NOTEBOOKS = {
-    "00_tutorial_configuracao.ipynb": tutorial,
-    "01_artigo1_grassroots.ipynb": paper1_grassroots,
-    "02_artigo1_revamp.ipynb": paper1_revamp,
-    "03_artigo2_multicenario.ipynb": paper2,
-    "04_sensibilidade_preco_energia.ipynb": sensitivity,
-    "05_casos_legados_scilab.ipynb": legacy,
+    "00_configuration_tutorial.ipynb": tutorial,
+    "01_paper1_grassroots.ipynb": paper1_grassroots,
+    "02_paper1_revamp.ipynb": paper1_revamp,
+    "03_paper2_multiscenario.ipynb": paper2,
+    "04_energy_price_sensitivity.ipynb": sensitivity,
+    "05_legacy_scilab_cases.ipynb": legacy,
 }
 
 
